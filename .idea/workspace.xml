@@ -5,32 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Client.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Agent/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/initializer/Client.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/Client_Implementation_View_Lv2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/Client_Implementation_View_Lv2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/Client_Logical_View_Lv2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/Client_Logical_View_Lv2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/Physical_View_Lv2.svg" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/Physical_View_Lv2.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/READAP.iml" beforeDir="false" afterPath="$PROJECT_DIR$/READAP.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mvnw" beforeDir="false" afterPath="$PROJECT_DIR$/mvnw" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Device-remote-management-/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/READAP/ReadapApplication.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/READAP/ReadapApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/READAP/Shared.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/main/resources/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,13 +70,13 @@
       <recent name="READAP" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.Client (1)">
+  <component name="RunManager" selected="Spring Boot.Agent">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Intializer.Client" />
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Intializer.*" />
+          <option name="PATTERN" value="Initializer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -107,18 +84,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadapApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="READAP" />
+    <configuration name="Agent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="Agent" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Initializer.Agent" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dei.isep.READAP.*" />
+          <option name="PATTERN" value="Initializer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dei.isep.READAP" />
-      <option name="MAIN_CLASS_NAME" value="dei.isep.READAP.ReadapApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -164,11 +138,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Spring Boot.Agent" />
         <item itemvalue="Spring Boot.Client (1)" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Spring Boot.Client" />
         <item itemvalue="Spring Boot.ReadapApplication" />
-        <item itemvalue="JUnit.ReadapApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +163,7 @@
       <workItem from="1716131983764" duration="27000" />
       <workItem from="1716193529337" duration="1310000" />
       <workItem from="1716400623721" duration="80000" />
-      <workItem from="1716608018557" duration="2587000" />
+      <workItem from="1716608018557" duration="2960000" />
     </task>
     <servers />
   </component>
