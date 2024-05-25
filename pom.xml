@@ -11,9 +11,15 @@
 	<groupId>dei.isep</groupId>
 	<artifactId>READAP</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>READAP</name>
+    <packaging>pom</packaging>
+    <name>READAP</name>
 	<description>PESTI project</description>
-	<properties>
+
+    <modules>
+        <module>Agent</module>
+	</modules>
+
+    <properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2023.0.1</spring-cloud.version>
 	</properties>
@@ -28,6 +34,14 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.0</version>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 	<dependencyManagement>
 		<dependencies>
