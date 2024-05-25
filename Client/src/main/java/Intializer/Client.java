@@ -1,4 +1,4 @@
-package initializer;
+package Intializer;
 
 
 import org.springframework.boot.CommandLineRunner;
@@ -9,7 +9,6 @@ import java.io.*;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Logger;
-
 
 @SpringBootApplication
 public class Client implements CommandLineRunner {
@@ -23,9 +22,6 @@ public class Client implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws IOException, InterruptedException {
-
-
-
 
     }
 }
