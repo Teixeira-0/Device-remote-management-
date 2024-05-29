@@ -12,8 +12,8 @@ public class AppSettings {
     private static final Logger LOGGER = LoggerFactory.getLogger(AppSettings.class);
 
     private static final String PROPERTIES_RESOURCE = "application.properties";
-
     private static final String SESSION_POOL_SIZE = "SessionPoolSize";
+    private static final String CONNECTION_PORT = "ConnectionPort";
 
     private final Properties applicationProperties = new Properties();
 
@@ -40,11 +40,19 @@ public class AppSettings {
     }
 
     private void setDefaultProperties() {
-        this.applicationProperties.setProperty(SESSION_POOL_SIZE,"20");
+        //Default Session Pool Size
+        this.applicationProperties.setProperty(SESSION_POOL_SIZE,"15");
+
+        //Default Connection Port
+        this.applicationProperties.setProperty(CONNECTION_PORT,"61010");
     }
 
     public Integer getSessionPoolSize(){
         return Integer.valueOf(this.applicationProperties.getProperty(SESSION_POOL_SIZE));
+    }
+
+    public Integer getConnectionPort(){
+        return Integer.valueOf(this.applicationProperties.getProperty(CONNECTION_PORT));
     }
 
     public String getProperty(final String prop) {

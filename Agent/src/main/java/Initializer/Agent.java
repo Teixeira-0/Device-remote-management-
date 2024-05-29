@@ -27,7 +27,6 @@ public class Agent implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws IOException, InterruptedException {
-        System.out.println(Application.settings().getSessionPoolSize());
         connectionHandler.handleConnectionRequest();
     }
 }

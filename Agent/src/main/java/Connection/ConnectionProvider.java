@@ -1,5 +1,6 @@
 package Connection;
 
+import Settings.Application;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -16,8 +17,8 @@ public class ConnectionProvider {
 
     public ConnectionProvider () throws IOException {
 
-        this.agentSocket = new ServerSocket(61010);
-        logger.info("Open port 61010 for connection");
+        this.agentSocket = new ServerSocket(Application.settings().getConnectionPort());
+        logger.info("Open port " + Application.settings().getConnectionPort() +" for connection");
     }
 
     public ServerSocket getServerSocket(){
