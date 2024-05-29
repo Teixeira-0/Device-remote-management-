@@ -2,6 +2,8 @@ package Initializer;
 
 
 import Connection.ConnectionHandler;
+import Settings.AppSettings;
+import Settings.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -25,6 +27,7 @@ public class Agent implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws IOException, InterruptedException {
+        System.out.println(Application.settings().getSessionPoolSize());
         connectionHandler.handleConnectionRequest();
     }
 }

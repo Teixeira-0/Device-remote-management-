@@ -1,5 +1,6 @@
 package Connection;
 
+import Session.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -8,12 +9,15 @@ import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
+import java.util.concurrent.LinkedBlockingQueue;
 
 @Component
 public class ConnectionHandler {
 
+    private static final String SESSION_POOL_SIZE = "SessionPoolSize ";
     private final ServerSocket agentSocket;
 
+    private final LinkedBlockingQueue<Session> sessionPool = new LinkedBlockingQueue<Session>();
     private ExecutorService threadPool;
 
     @Autowired
@@ -37,9 +41,15 @@ public class ConnectionHandler {
 
     }
 
-    public void serveClient(Socket connectionSockets) throws InterruptedException {
+    public void establishSession(Socket connectionSockets) throws InterruptedException {
 
 
+    }
+
+    private void prePopulateSessionPool(){
+        for (int i = 0; i < 12; i ++){
+
+        }
     }
 
 }
