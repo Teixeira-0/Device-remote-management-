@@ -1,6 +1,7 @@
 package Initializer;
 
 
+import Authentication.TLS;
 import Connection.ConnectionHandler;
 import Settings.AppSettings;
 import Settings.Application;
@@ -27,6 +28,12 @@ public class Agent implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws IOException, InterruptedException {
+        try{
+            TLS t = new TLS();
+        }catch (Exception e){
+
+        }
+
         connectionHandler.handleConnectionRequest();
     }
 }

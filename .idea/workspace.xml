@@ -6,13 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -188,11 +184,32 @@
       <workItem from="1716400623721" duration="80000" />
       <workItem from="1716608018557" duration="5254000" />
       <workItem from="1716613682141" duration="3058000" />
-      <workItem from="1716909771106" duration="5604000" />
+      <workItem from="1716909771106" duration="11872000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Authentication/TLS.java</url>
+          <line>13</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.security.KeyStore" memberName="keyStoreSpi" />
+      </pinned-members>
+    </pin-to-top-manager>
+    <watches-manager>
+      <configuration name="SpringBootApplicationConfigurationType">
+        <watch expression="sslServerSocketFactory" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
