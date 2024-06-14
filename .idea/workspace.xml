@@ -6,8 +6,14 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

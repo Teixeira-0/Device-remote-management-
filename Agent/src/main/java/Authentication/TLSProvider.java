@@ -42,7 +42,7 @@ public class TLSProvider {
             // Create SSLServerSocketFactory
             SSLServerSocketFactory sslServerSocketFactory = sslContext.getServerSocketFactory();
             SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(Application.settings().getConnectionPort());
-            sslServerSocket.setNeedClientAuth(true); // Require client authentication
+            //sslServerSocket.setNeedClientAuth(true); // Require client authentication
 
 
             System.out.println("SSL Server started on port 8443");

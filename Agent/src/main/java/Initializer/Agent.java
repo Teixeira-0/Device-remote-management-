@@ -7,12 +7,15 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.io.*;
 import java.util.logging.Logger;
 
 @SpringBootApplication
-@ComponentScan(basePackages = {"Connection","Authentication"})
+@RestController
+@ComponentScan(basePackages = {"Connection","Authentication","Session"})
 public class Agent implements CommandLineRunner {
 
     @Autowired
@@ -27,4 +30,6 @@ public class Agent implements CommandLineRunner {
     public void run(String... args) throws IOException, InterruptedException {
         connectionHandler.handleConnectionRequest();
     }
+
+
 }

@@ -5,6 +5,9 @@ import Session.Session;
 import Settings.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLSession;
@@ -12,18 +15,23 @@ import javax.net.ssl.SSLSocket;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.logging.Logger;
 
 @Component
+@RestController
 public class ConnectionHandler {
 
     //private final ServerSocket agentSocket;
     private final SSLServerSocket serverSocket;
 
     private final LinkedBlockingQueue<Session> sessionPool = new LinkedBlockingQueue<Session>();
+
+    private final HashMap<Integer, Session> sessionsMap = new HashMap<Integer, Session>();
     private ExecutorService threadPool;
 
     private final Logger logger = Logger.getLogger(TLSProvider.class.getName());
@@ -47,7 +55,7 @@ public class ConnectionHandler {
                 SSLSocket sslSocket;
 
                 sslSocket = (SSLSocket) serverSocket.accept();
-                sslSocket.startHandshake();
+               // sslSocket.startHandshake();
 
                 SSLSession session = sslSocket.getSession();
                 if (session.isValid()) {
@@ -64,14 +72,16 @@ public class ConnectionHandler {
             throw new Error("Connection failed, Error:" + e.getMessage());
         }
 
-
-
     }
 
     private void establishSession(Socket connectionSocket) throws InterruptedException {
+
         Session session = sessionPool.take();
         session.establishSocket(connectionSocket);
-        threadPool.submit(session);
+        sessionsMap.put(session.getSESSION_ID(),session);
+
+        //session.downloadThread.start();
+        //threadPool.submit(session);
     }
 
     private void prePopulateSessionPool(){
@@ -79,6 +89,20 @@ public class ConnectionHandler {
             Session session = new Session();
             sessionPool.add(session);
         }
+    }
+
+
+    @GetMapping("/hello")
+    public String testRouting (@RequestParam("ids") List<Integer> ids){
+
+        Session session;
+
+        for (Integer id: ids) {
+            session = sessionsMap.get(id);
+            session.downloadThread.start();
+        }
+
+        return "FUNCIONOU :)";
     }
 
 }
