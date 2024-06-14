@@ -1,28 +1,37 @@
 package Connection;
 
+import Authentication.TLSProvider;
 import Session.Session;
 import Settings.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import javax.net.ssl.SSLServerSocket;
+import javax.net.ssl.SSLSession;
+import javax.net.ssl.SSLSocket;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.logging.Logger;
 
 @Component
 public class ConnectionHandler {
 
-    private final ServerSocket agentSocket;
+    //private final ServerSocket agentSocket;
+    private final SSLServerSocket serverSocket;
 
     private final LinkedBlockingQueue<Session> sessionPool = new LinkedBlockingQueue<Session>();
     private ExecutorService threadPool;
 
+    private final Logger logger = Logger.getLogger(TLSProvider.class.getName());
+
     @Autowired
-    public ConnectionHandler(ConnectionProvider connectionProvider){
-        this.agentSocket = connectionProvider.getServerSocket();
+    public ConnectionHandler(TLSProvider tlsProvider){
+        //this.agentSocket = connectionProvider.getServerSocket();
+        this.serverSocket = tlsProvider.tlsConnection();
 
         // The number of threads must be equal or superior to the number of sessions in the pool
         this.threadPool = Executors.newFixedThreadPool(Application.settings().getSessionPoolSize());
@@ -35,14 +44,27 @@ public class ConnectionHandler {
 
         try{
             while(true){
-                Socket socket = this.agentSocket.accept();
-                this.establishSession(socket);
+                SSLSocket sslSocket;
+
+                sslSocket = (SSLSocket) serverSocket.accept();
+                sslSocket.startHandshake();
+
+                SSLSession session = sslSocket.getSession();
+                if (session.isValid()) {
+                    this.establishSession(sslSocket);
+                    logger.info("Handshake completed successfully with " + sslSocket.getInetAddress());
+                } else {
+                    logger.warning("Handshake failed or session is not valid with " + sslSocket.getInetAddress());
+                    sslSocket.close();
+                }
             }
 
         }catch (Exception e){
-            this.agentSocket.close();
+            //this.agentSocket.close();
             throw new Error("Connection failed, Error:" + e.getMessage());
         }
+
+
 
     }
 

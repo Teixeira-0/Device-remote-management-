@@ -1,10 +1,7 @@
 package Initializer;
 
 
-import Authentication.TLS;
 import Connection.ConnectionHandler;
-import Settings.AppSettings;
-import Settings.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -15,7 +12,7 @@ import java.io.*;
 import java.util.logging.Logger;
 
 @SpringBootApplication
-@ComponentScan(basePackages = "Connection")
+@ComponentScan(basePackages = {"Connection","Authentication"})
 public class Agent implements CommandLineRunner {
 
     @Autowired
@@ -28,12 +25,6 @@ public class Agent implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws IOException, InterruptedException {
-        try{
-            TLS t = new TLS();
-        }catch (Exception e){
-
-        }
-
         connectionHandler.handleConnectionRequest();
     }
 }
