@@ -8,10 +8,12 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +102,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Agent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="Agent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
       <module name="Agent" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Initializer.Agent" />
       <extension name="coverage">
@@ -120,15 +122,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+    <configuration name="Client" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
       <module name="Client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="initializer.Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="initializer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="SPRING_BOOT_MAIN_CLASS" value="Intializer.Client" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -146,25 +142,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="READAP" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="READAP.ReadapApplication" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="READAP.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+    <list>
+      <item itemvalue="Application.Client" />
+      <item itemvalue="Spring Boot.Client" />
+      <item itemvalue="Spring Boot.Agent" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Agent" />
-        <item itemvalue="Application.Client" />
         <item itemvalue="Spring Boot.Client" />
-        <item itemvalue="Spring Boot.ReadapApplication" />
+        <item itemvalue="Application.Client" />
       </list>
     </recent_temporary>
   </component>
@@ -188,7 +175,7 @@
       <workItem from="1716608018557" duration="5254000" />
       <workItem from="1716613682141" duration="3058000" />
       <workItem from="1716909771106" duration="11872000" />
-      <workItem from="1718389041378" duration="6942000" />
+      <workItem from="1718389041378" duration="11680000" />
     </task>
     <servers />
   </component>
@@ -199,14 +186,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java</url>
-          <line>25</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java</url>
-          <line>80</line>
-          <option name="timeStamp" value="3" />
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

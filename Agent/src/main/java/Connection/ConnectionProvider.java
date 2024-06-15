@@ -8,6 +8,7 @@ import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.net.ServerSocket;
 
+//#################################DEPRECATED#################################
 
 public class ConnectionProvider {
 
@@ -26,3 +27,5 @@ public class ConnectionProvider {
     }
 
 }
+
+

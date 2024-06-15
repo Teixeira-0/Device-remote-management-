@@ -7,13 +7,10 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
-import org.springframework.web.bind.annotation.RestController;
-
 import java.io.*;
 import java.util.logging.Logger;
 
 @SpringBootApplication
-@RestController
 @ComponentScan(basePackages = {"Connection","Authentication","Session"})
 public class Agent implements CommandLineRunner {
 

@@ -2,21 +2,24 @@ package Intializer;
 
 
 
+import Connection.ClientConnectionHandler;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.ComponentScan;
+
 
 import java.io.*;
 import java.util.logging.Logger;
 
 @SpringBootApplication
-@RestController
+@ComponentScan(basePackages = {"Connection","Authentication"})
 public class Client implements CommandLineRunner {
 
 
-
+    @Autowired
+    private ClientConnectionHandler connectionHandler;
     private static Logger LOG = Logger.getLogger(Client.class.getName());
 
     public static void main(String[] args) {
@@ -24,12 +27,7 @@ public class Client implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws IOException, InterruptedException {
-
-    }
-
-    @GetMapping("/hello")
-    public String hello() {
-        return "Hello, World!";
+    public void run(String... args){
+        connectionHandler.handleConnectionRequest();
     }
 }

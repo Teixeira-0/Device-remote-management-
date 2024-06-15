@@ -5,18 +5,10 @@ import Session.Session;
 import Settings.Application;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.net.ssl.SSLServerSocket;
 import javax.net.ssl.SSLSession;
 import javax.net.ssl.SSLSocket;
-import java.io.IOException;
-import java.net.ServerSocket;
-import java.net.Socket;
-import java.util.HashMap;
-import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -31,10 +23,10 @@ public class ConnectionHandler {
 
     private final LinkedBlockingQueue<Session> sessionPool = new LinkedBlockingQueue<Session>();
 
-    private final HashMap<Integer, Session> sessionsMap = new HashMap<Integer, Session>();
+    //private final HashMap<Integer, Session> sessionsMap = new HashMap<Integer, Session>();
     private ExecutorService threadPool;
 
-    private final Logger logger = Logger.getLogger(TLSProvider.class.getName());
+    private final Logger logger = Logger.getLogger(ConnectionHandler.class.getName());
 
     @Autowired
     public ConnectionHandler(TLSProvider tlsProvider){
@@ -48,7 +40,7 @@ public class ConnectionHandler {
         this.prePopulateSessionPool();
     }
 
-    public void handleConnectionRequest() throws IOException {
+    public void handleConnectionRequest() {
 
         try{
             while(true){
@@ -74,14 +66,13 @@ public class ConnectionHandler {
 
     }
 
-    private void establishSession(Socket connectionSocket) throws InterruptedException {
+    private void establishSession(SSLSocket connectionSocket) throws InterruptedException {
 
         Session session = sessionPool.take();
         session.establishSocket(connectionSocket);
-        sessionsMap.put(session.getSESSION_ID(),session);
+        //sessionsMap.put(session.getSESSION_ID(),session);
 
-        //session.downloadThread.start();
-        //threadPool.submit(session);
+        threadPool.submit(session);
 }
 
     private void prePopulateSessionPool(){
@@ -92,17 +83,6 @@ public class ConnectionHandler {
     }
 
 
-    @GetMapping("/hello")
-    public String testRouting (@RequestParam("ids") List<Integer> ids){
 
-        Session session;
-
-        for (Integer id: ids) {
-            session = sessionsMap.get(id);
-            session.downloadThread.start();
-        }
-
-        return "FUNCIONOU :)";
-    }
 
 }

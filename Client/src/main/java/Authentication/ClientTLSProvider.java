@@ -1,26 +1,27 @@
 package Authentication;
 
-import Settings.Application;
+import Settings.ClientApplication;
 import org.springframework.stereotype.Component;
 
 import javax.net.ssl.*;
-import java.io.*;
-import java.security.*;
+import java.io.FileInputStream;
+import java.security.KeyStore;
 import java.util.logging.Level;
 import java.util.logging.LogRecord;
 import java.util.logging.Logger;
 
 @Component
-public class TLSProvider {
-    public SSLServerSocket tlsConnection() {
+public class ClientTLSProvider {
 
-        String keystoreType = Application.settings().getKeystoreType();
-        String keystorePath = Application.settings().getKeystorePath();
-        String managerAlgorithm = Application.settings().getManagersAlgorithm();
-        String truststoreType = Application.settings().getTruststoreType();
-        String trustStorePath = Application.settings().getTruststorePath();
-        String contextProtocol = Application.settings().getContextProtocol();
-        Integer connectionPort = Application.settings().getConnectionPort();
+    public SSLSocketFactory tlsConnection() {
+        String keystoreType = ClientApplication.settings().getKeystoreType();
+        String keystorePath = ClientApplication.settings().getKeystorePath();
+        String managerAlgorithm = ClientApplication.settings().getManagersAlgorithm();
+        String truststoreType = ClientApplication.settings().getTruststoreType();
+        String trustStorePath = ClientApplication.settings().getTruststorePath();
+        String contextProtocol = ClientApplication.settings().getContextProtocol();
+        Integer connectionPort = ClientApplication.settings().getConnectionPort();
+
 
         try {
             // Load the KeyStore
@@ -48,23 +49,13 @@ public class TLSProvider {
             sslContext.init(keyManagerFactory.getKeyManagers(), trustManagerFactory.getTrustManagers(), null);
 
             // Create SSLServerSocketFactory
-            SSLServerSocketFactory sslServerSocketFactory = sslContext.getServerSocketFactory();
-            SSLServerSocket sslServerSocket = (SSLServerSocket) sslServerSocketFactory.createServerSocket(connectionPort);
-            sslServerSocket.setNeedClientAuth(true); // Require client authentication
+            SSLSocketFactory sslServerSocketFactory = sslContext.getSocketFactory();
 
-
-            Logger logger = Logger.getLogger(TLSProvider.class.getName());
-            logger.log(new LogRecord(Level.INFO, "SSL Server started on port " + connectionPort));
-
-            return sslServerSocket;
+            return sslServerSocketFactory;
 
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-
-
-
-
 }
