@@ -9,11 +9,9 @@
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,6 +188,7 @@
       <workItem from="1716608018557" duration="5254000" />
       <workItem from="1716613682141" duration="3058000" />
       <workItem from="1716909771106" duration="11872000" />
+      <workItem from="1718389041378" duration="6942000" />
     </task>
     <servers />
   </component>
@@ -197,6 +196,20 @@
     <option name="version" value="3" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java</url>
+          <line>25</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java</url>
+          <line>80</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="java.security.KeyStore" memberName="keyStoreSpi" />

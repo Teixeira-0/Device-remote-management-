@@ -55,7 +55,7 @@ public class ConnectionHandler {
                 SSLSocket sslSocket;
 
                 sslSocket = (SSLSocket) serverSocket.accept();
-               // sslSocket.startHandshake();
+                sslSocket.startHandshake();
 
                 SSLSession session = sslSocket.getSession();
                 if (session.isValid()) {
@@ -82,7 +82,7 @@ public class ConnectionHandler {
 
         //session.downloadThread.start();
         //threadPool.submit(session);
-    }
+}
 
     private void prePopulateSessionPool(){
         for (int i = 0; i < Application.settings().getSessionPoolSize(); i ++){
