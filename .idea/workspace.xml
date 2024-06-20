@@ -6,14 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Initializer/Agent.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Authentication/ClientTLSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Authentication/ClientTLSProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/READAP.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/READAP.vpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +85,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Agent">
+  <component name="RunManager" selected="Spring Boot.Client">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Intializer.Client" />
       <module name="Client" />
@@ -175,7 +172,7 @@
       <workItem from="1716608018557" duration="5254000" />
       <workItem from="1716613682141" duration="3058000" />
       <workItem from="1716909771106" duration="11872000" />
-      <workItem from="1718389041378" duration="11680000" />
+      <workItem from="1718389041378" duration="20738000" />
     </task>
     <servers />
   </component>
@@ -186,14 +183,15 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="6" />
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
+        <PinnedItemInfo parentTag="sun.security.provider.JavaKeyStore$DualFormatJKS" memberName="primaryKeyStore" />
         <PinnedItemInfo parentTag="java.security.KeyStore" memberName="keyStoreSpi" />
       </pinned-members>
     </pin-to-top-manager>

@@ -20,12 +20,8 @@ public class ConnectionHandler {
 
     //private final ServerSocket agentSocket;
     private final SSLServerSocket serverSocket;
-
     private final LinkedBlockingQueue<Session> sessionPool = new LinkedBlockingQueue<Session>();
-
-    //private final HashMap<Integer, Session> sessionsMap = new HashMap<Integer, Session>();
     private ExecutorService threadPool;
-
     private final Logger logger = Logger.getLogger(ConnectionHandler.class.getName());
 
     @Autowired
@@ -70,8 +66,6 @@ public class ConnectionHandler {
 
         Session session = sessionPool.take();
         session.establishSocket(connectionSocket);
-        //sessionsMap.put(session.getSESSION_ID(),session);
-
         threadPool.submit(session);
 }
 

@@ -20,8 +20,6 @@ public class ClientTLSProvider {
         String truststoreType = ClientApplication.settings().getTruststoreType();
         String trustStorePath = ClientApplication.settings().getTruststorePath();
         String contextProtocol = ClientApplication.settings().getContextProtocol();
-        Integer connectionPort = ClientApplication.settings().getConnectionPort();
-
 
         try {
             // Load the KeyStore
