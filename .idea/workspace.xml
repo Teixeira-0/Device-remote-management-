@@ -5,8 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/READAP.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/READAP.vpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,8 +147,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Client" />
         <item itemvalue="Spring Boot.Agent" />
+        <item itemvalue="Application.Client" />
         <item itemvalue="Spring Boot.Client" />
       </list>
     </recent_temporary>
@@ -170,6 +174,7 @@
       <workItem from="1716613682141" duration="3058000" />
       <workItem from="1716909771106" duration="11872000" />
       <workItem from="1718389041378" duration="22524000" />
+      <workItem from="1718993202360" duration="2813000" />
     </task>
     <servers />
   </component>
@@ -183,6 +188,11 @@
           <url>file://$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java</url>
           <line>26</line>
           <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
