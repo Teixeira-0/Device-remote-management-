@@ -26,7 +26,7 @@ public class Client implements CommandLineRunner {
 
     @Override
     public void run(String... args){
-       // connectionHandler.handleConnectionRequest();
+
     }
 
 
