@@ -1,3 +1,9 @@
 /Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Connection/ConnectionHandler.java
 /Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Connection/ConnectionProvider.java
+/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Settings/Application.java
+/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Session/Session.java
 /Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Initializer/Agent.java
+/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Protocol/ReadapCodes.java
+/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Settings/AppSettings.java
+/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Authentication/TLSProvider.java
+/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/java/Protocol/ReadapMessage.java
