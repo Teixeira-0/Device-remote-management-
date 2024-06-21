@@ -29,6 +29,14 @@ public class ReadapMessage {
         this.chunk = chunk;
     }
 
+    public ReadapMessage(Byte version, Byte code, byte[] chunk) {
+        this.version = version;
+        this.code = code;
+        this.chunkLength = (byte) (chunk.length / LENGTHMULTIPLE);
+        this.chunk = chunk;
+    }
+
+
     public byte[] toByteArray() throws IOException {
 
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -37,6 +45,21 @@ public class ReadapMessage {
         dos.writeByte(version);
         dos.writeByte(code);
         dos.writeInt(totalChunks);
+        dos.writeByte(chunkLength);
+        dos.write(chunk);
+
+        return baos.toByteArray();
+
+    }
+
+
+    public byte[] toByteArrayRemainder() throws IOException {
+
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        DataOutputStream dos = new DataOutputStream(baos);
+
+        dos.writeByte(version);
+        dos.writeByte(code);
         dos.writeByte(chunkLength);
         dos.write(chunk);
 
@@ -56,6 +79,20 @@ public class ReadapMessage {
         buffer.get(chunk);
 
         return new ReadapMessage(version,code,totalChunks,chunk);
+
+    }
+
+    public static ReadapMessage fromByteArrayRemainder(byte[] bytes){
+
+        ByteBuffer buffer = ByteBuffer.wrap(bytes);
+
+        byte version = buffer.get();
+        byte code = buffer.get();
+        byte chunkLength = buffer.get();
+        byte [] chunk = new byte[chunkLength];
+        buffer.get(chunk);
+
+        return new ReadapMessage(version,code,chunk);
 
     }
 
