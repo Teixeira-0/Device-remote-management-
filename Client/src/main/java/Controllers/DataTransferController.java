@@ -27,4 +27,13 @@ public class DataTransferController {
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    @GetMapping("/upload")
+    public ResponseEntity<Map<String, Object>> uploadData () throws IOException {
+
+        ClientSession session = ClientConnectionHandler.searchSessionById(1);
+        session.uploadData();
+
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }

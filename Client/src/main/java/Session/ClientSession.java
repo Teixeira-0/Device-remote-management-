@@ -30,6 +30,68 @@ public class ClientSession {
         remoteShellThread = new Thread(this::initializeRemoteShell);
     }
 
+    public void uploadData() throws IOException {
+        InputStream in = sessionSocket.getInputStream();
+        OutputStream out = sessionSocket.getOutputStream();
+
+        //Request to start upload
+        ReadapMessageClient initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.UPLOAD,0,new byte[0]);
+        out.write(initialMessage.toByteArray());
+
+        byte[] chunk = new byte[8192];
+        ReadapMessageClient receivedMessage;
+        byte[] fileBytes = new byte[8192];
+
+
+        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/ClientFolderPath/transferedfile.pdf");
+
+        //Send download length response
+        ReadapMessageClient response = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, 0, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
+        out.write(response.toByteArray());
+
+
+        FileInputStream fileInputStream = new FileInputStream(file);
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+
+        try{
+
+            long i = 0;
+            while(i < file.length()) {
+
+                if(i + 8192 > file.length()){
+                    long remainder = file.length() - i;
+                    fileBytes = new byte[(int)remainder];
+                    bufferedInputStream.read(fileBytes, 0, (int)remainder);
+
+                    ReadapMessageClient outputMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.DONWLOAD, 0, fileBytes);
+                    out.write(outputMessage.toByteArray());
+                    out.flush();
+
+                }else {
+                    fileBytes = new byte[8192];
+                    bufferedInputStream.read(fileBytes, (int) 0, 8192);
+
+                    ReadapMessageClient outputMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.DONWLOAD, 0, fileBytes);
+                    out.write(outputMessage.toByteArray());
+                    out.flush();
+
+
+                    in.read(chunk);
+                    receivedMessage = ReadapMessageClient.fromByteArray(chunk);
+
+                    if(receivedMessage.getCode() != ReadapCodesClient.ACK){
+                        break;
+                    }
+                }
+
+                i = i + 8192;
+            }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+    }
+
     public void downloadData() throws IOException {
 
         InputStream in = sessionSocket.getInputStream();

@@ -55,6 +55,8 @@ public class Session implements Runnable {
                     this.remoteShell(in,out);
                 case ReadapCodes.DONWLOAD:
                     this.downloadData(in,out);
+                case ReadapCodes.UPLOAD:
+                    this.uploadData(in,out);
 
             }
 
@@ -68,6 +70,47 @@ public class Session implements Runnable {
 
         }
 
+    }
+
+    public void uploadData(InputStream in, OutputStream out) throws IOException {
+
+        //Send ACk response
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
+        out.write(response.toByteArray());
+
+        ReadapMessage message;
+
+
+        //Client response to initial message with the download length
+        byte [] chunk = new byte[8200];
+        in.read(chunk);
+        response =  ReadapMessage.fromByteArray(chunk);
+
+        long fileLength = ByteBuffer.wrap(response.getChunk()).getLong();
+
+        if(response.getCode() != ReadapCodes.ACK){
+            //END CONNECTION
+        }
+
+        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/AgentFolderPath/transfered.pdf");
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+
+        for (int i = 0; i < fileLength; i = i + 8192) {
+
+            try {
+                in.read(chunk);
+                response = ReadapMessage.fromByteArray(chunk);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+            bufferedOutputStream.write(response.getChunk(),0,response.getChunkLength());
+
+            message = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
+            out.write(message.toByteArray());
+        }
+
+        bufferedOutputStream.flush();
     }
 
     public void downloadData(InputStream in, OutputStream out) throws IOException {
