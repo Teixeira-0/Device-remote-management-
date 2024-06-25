@@ -4,8 +4,8 @@ import Protocol.ReadapCodesClient;
 import Protocol.ReadapMessageClient;
 
 import javax.net.ssl.SSLSocket;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
+import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 import java.util.Scanner;
@@ -29,6 +29,50 @@ public class ClientSession {
 
         remoteShellThread = new Thread(this::initializeRemoteShell);
     }
+
+    public void downloadData() throws IOException {
+
+        InputStream in = sessionSocket.getInputStream();
+        OutputStream out = sessionSocket.getOutputStream();
+        ReadapMessageClient response;
+        ReadapMessageClient message;
+
+        //Request to start remote execution
+        ReadapMessageClient initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.DONWLOAD,0,new byte[0]);
+        out.write(initialMessage.toByteArray());
+
+        //Server response to initial message with the download length
+        byte [] chunk = new byte[8200];
+        in.read(chunk);
+        response =  ReadapMessageClient.fromByteArray(chunk);
+
+        long fileLength = ByteBuffer.wrap(response.getChunk()).getLong();
+
+        if(response.getCode() != ReadapCodesClient.ACK){
+            //END CONNECTION
+        }
+
+        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/ClientFolderPath/transferedfile.txt");
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
+        BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
+
+        for (int i = 0; i < fileLength; i = i + 8192) {
+
+            try {
+                in.read(chunk);
+                response = ReadapMessageClient.fromByteArray(chunk);
+            }catch (Exception e){
+                System.out.println(e.getMessage());
+            }
+            bufferedOutputStream.write(response.getChunk(),0,response.getChunkLength());
+
+            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, 0, new byte[0]);
+            out.write(message.toByteArray());
+        }
+
+        bufferedOutputStream.flush();
+    }
+
 
     //SWITCH TO PRIVATE WITH THREAD
     public void initializeRemoteShell (){

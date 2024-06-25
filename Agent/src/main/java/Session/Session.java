@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.net.ssl.SSLSocket;
 import java.io.*;
+import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
 import java.util.*;
 
@@ -52,6 +53,8 @@ public class Session implements Runnable {
 
                 case ReadapCodes.REMOTESTART:
                     this.remoteShell(in,out);
+                case ReadapCodes.DONWLOAD:
+                    this.downloadData(in,out);
 
             }
 
@@ -66,6 +69,66 @@ public class Session implements Runnable {
         }
 
     }
+
+    public void downloadData(InputStream in, OutputStream out) throws IOException {
+
+        byte[] chunk = new byte[8192];
+        ReadapMessage receivedMessage;
+        byte[] fileBytes = new byte[8192];
+
+
+        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/AgentFolderPath/test.txt");
+
+        //Send download length response
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
+        out.write(response.toByteArray());
+
+
+        FileInputStream fileInputStream = new FileInputStream(file);
+        BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
+
+        try{
+
+        long i = 0;
+        while(i < file.length()) {
+
+            if(i + 8192 > file.length()){
+                long remainder = file.length() - i;
+                fileBytes = new byte[(int)remainder];
+                bufferedInputStream.read(fileBytes, 0, (int)remainder);
+
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);
+                out.write(outputMessage.toByteArray());
+                out.flush();
+
+            }else {
+                fileBytes = new byte[8192];
+                bufferedInputStream.read(fileBytes, (int) 0, 8192);
+
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);
+                out.write(outputMessage.toByteArray());
+                out.flush();
+
+
+                in.read(chunk);
+                receivedMessage = ReadapMessage.fromByteArray(chunk);
+
+                if(receivedMessage.getCode() != ReadapCodes.ACK){
+                    break;
+                }
+            }
+
+            i = i + 8192;
+        }
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
+
+
+
+    }
+
 
     public void remoteShell(InputStream in, OutputStream out) throws IOException, InterruptedException {
 
@@ -152,6 +215,7 @@ public class Session implements Runnable {
                         } else {
                             ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDMESSAGE, 0, s.toString().getBytes());
                             out.write(outputMessage.toByteArray());
+                            //FLUSH?????
 
                             in.read(chunk);
                             receivedMessage = ReadapMessage.fromByteArray(chunk);
