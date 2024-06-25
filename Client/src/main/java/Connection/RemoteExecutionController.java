@@ -37,11 +37,11 @@ public class RemoteExecutionController {
 
 
     @GetMapping("/executemultiple")
-    public ResponseEntity<Map<String, Object>> initializeRemoteShellMultipleCommand(@RequestParam("command") String command, @RequestParam("sessionid") int sessionId ){
+    public ResponseEntity<Map<String, Object>> initializeRemoteShellMultipleCommand(@RequestParam("sessionid") int sessionId ){
 
         ClientSession session = ClientConnectionHandler.searchSessionById(sessionId);
 
-        session.initializeRemoteShell();
+        session.initializeRemoteShellMultiple();
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
