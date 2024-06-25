@@ -12,6 +12,7 @@ import javax.net.ssl.SSLSocket;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
+import java.util.concurrent.ThreadPoolExecutor;
 import java.util.logging.Logger;
 
 @Component
@@ -44,7 +45,10 @@ public class ConnectionHandler {
 
                 sslSocket = (SSLSocket) serverSocket.accept();
                 sslSocket.startHandshake();
-
+                /*
+                ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) threadPool;
+                System.out.println(threadPoolExecutor.getPoolSize());
+                 */
                 SSLSession session = sslSocket.getSession();
                 if (session.isValid()) {
                     this.establishSession(sslSocket);

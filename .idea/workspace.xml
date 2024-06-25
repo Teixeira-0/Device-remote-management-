@@ -6,11 +6,27 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapMessage.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Intializer/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapMessageClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapMessageClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/.READAP.vpp.lck" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Docs/READAP.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/READAP.vpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +38,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -49,9 +66,11 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
     &quot;git-widget-placeholder&quot;: &quot;2-i-want-to-establish-a-connection-with-an-agent-device&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java&quot;,
     &quot;last_opened_file_path&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -71,11 +90,17 @@
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/Docs" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="READAP" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="Intializer" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="Protocol" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -85,7 +110,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Client (1)">
+  <component name="RunManager" selected="Spring Boot.Agent">
     <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Intializer.Client" />
       <module name="Client" />
@@ -95,6 +120,37 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadapMessageClientTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Protocol.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Protocol" />
+      <option name="MAIN_CLASS_NAME" value="Protocol.ReadapMessageClientTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ReadapMessageClientTest.toByteArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Protocol.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Protocol" />
+      <option name="MAIN_CLASS_NAME" value="Protocol.ReadapMessageClientTest" />
+      <option name="METHOD_NAME" value="toByteArray" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -141,6 +197,8 @@
     </configuration>
     <list>
       <item itemvalue="Application.Client" />
+      <item itemvalue="JUnit.ReadapMessageClientTest" />
+      <item itemvalue="JUnit.ReadapMessageClientTest.toByteArray" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Client" />
       <item itemvalue="Spring Boot.Agent" />
@@ -148,6 +206,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.Agent" />
+        <item itemvalue="JUnit.ReadapMessageClientTest.toByteArray" />
+        <item itemvalue="JUnit.ReadapMessageClientTest" />
         <item itemvalue="Application.Client" />
         <item itemvalue="Spring Boot.Client" />
       </list>
@@ -174,7 +234,8 @@
       <workItem from="1716613682141" duration="3058000" />
       <workItem from="1716909771106" duration="11872000" />
       <workItem from="1718389041378" duration="22524000" />
-      <workItem from="1718993202360" duration="2813000" />
+      <workItem from="1718993202360" duration="26860000" />
+      <workItem from="1719311025423" duration="5813000" />
     </task>
     <servers />
   </component>
@@ -185,14 +246,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/main/java/Authentication/TLSProvider.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="7" />
+          <url>file://$PROJECT_DIR$/Client/src/test/java/Protocol/ReadapMessageClientTest.java</url>
+          <line>12</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java</url>
-          <line>30</line>
-          <option name="timeStamp" value="8" />
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
+          <line>176</line>
+          <option name="timeStamp" value="53" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -207,5 +268,14 @@
         <watch expression="sslServerSocketFactory" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Device_remote_management_$Agent.ic" NAME="Agent Coverage Results" MODIFIED="1719316012899" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>Initializer.*</FILTER>
+    </SUITE>
   </component>
 </project>
