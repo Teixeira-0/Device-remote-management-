@@ -13,6 +13,7 @@ public class ClientSession {
     private static int SESSION_ID_GENERATOR = 0;
     private final int SESSION_ID;
 
+    private String command;
     public Thread remoteShellThread;
 
     public int getSESSION_ID() {
@@ -56,7 +57,7 @@ public class ClientSession {
 
 
             //Send command
-            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND,0,"ls ;echo ;echo 123098123214123".getBytes());
+            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND,0,(command +" ;echo ;echo 123098123214123").getBytes());
             out.write(message.toByteArray());
 
 
@@ -89,6 +90,10 @@ public class ClientSession {
             System.out.println(e.getMessage());
         }
 
+    }
+
+    public void setCommand(String command) {
+        this.command = command;
     }
 
     public void establishSocket (SSLSocket agentSocket){
