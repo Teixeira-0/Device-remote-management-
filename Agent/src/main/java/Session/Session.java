@@ -47,15 +47,19 @@ public class Session implements Runnable {
 
         ReadapMessage receivedMessage = ReadapMessage.fromByteArray(chunk);
 
-        switch(receivedMessage.getCode()){
+        do{
+            switch(receivedMessage.getCode()){
 
-            case ReadapCodes.REMOTESTART:
-                this.remoteShell(in,out);
+                case ReadapCodes.REMOTESTART:
+                    this.remoteShell(in,out);
 
-            case ReadapCodes.EXIT:
-                Thread.currentThread().interrupt();
-        }
+            }
 
+            in.read(chunk);
+            receivedMessage = ReadapMessage.fromByteArray(chunk);
+        }while(receivedMessage.getCode() != ReadapCodes.EXIT);
+
+            Thread.currentThread().interrupt();
 
         }catch (Exception e){
 
