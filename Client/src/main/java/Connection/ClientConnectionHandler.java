@@ -79,4 +79,8 @@ public class ClientConnectionHandler {
         }
     }
 
+
+    public static ClientSession searchSessionById(Integer sessionId) {
+        return sessionsMap.get(sessionId);
+    }
 }

@@ -7,15 +7,13 @@ import java.nio.ByteBuffer;
 
 public class ReadapMessageClient {
 
-    private static byte LENGTHMULTIPLE = 32;
-
     private Byte version;
 
     private Byte code;
 
     private Integer totalChunks;
 
-    private byte chunkLength;
+    private short chunkLength;
 
     //chunk size = 32 * chunkLength
     private byte [] chunk;
@@ -25,14 +23,14 @@ public class ReadapMessageClient {
         this.version = version;
         this.code = code;
         this.totalChunks = totalChunks;
-        this.chunkLength = (byte) (chunk.length / LENGTHMULTIPLE);
+        this.chunkLength = (short) chunk.length;
         this.chunk = chunk;
     }
 
     public ReadapMessageClient(Byte version, Byte code, byte[] chunk) {
         this.version = version;
         this.code = code;
-        this.chunkLength = (byte) (chunk.length / LENGTHMULTIPLE);
+        this.chunkLength = (short) chunk.length;
         this.chunk = chunk;
     }
 
@@ -45,7 +43,7 @@ public class ReadapMessageClient {
         dos.writeByte(version);
         dos.writeByte(code);
         dos.writeInt(totalChunks);
-        dos.writeByte(chunkLength);
+        dos.writeShort(chunkLength);
         dos.write(chunk);
 
         return baos.toByteArray();
@@ -60,7 +58,7 @@ public class ReadapMessageClient {
 
         dos.writeByte(version);
         dos.writeByte(code);
-        dos.writeByte(chunkLength);
+        dos.writeShort(chunkLength);
         dos.write(chunk);
 
         return baos.toByteArray();
@@ -74,7 +72,7 @@ public class ReadapMessageClient {
         byte version = buffer.get();
         byte code = buffer.get();
         int totalChunks = buffer.getInt();
-        byte chunkLength = buffer.get();
+        short chunkLength = buffer.getShort();
         byte [] chunk = new byte[chunkLength];
         buffer.get(chunk);
 
@@ -88,7 +86,7 @@ public class ReadapMessageClient {
 
         byte version = buffer.get();
         byte code = buffer.get();
-        byte chunkLength = buffer.get();
+        short chunkLength = buffer.getShort();
         byte [] chunk = new byte[chunkLength];
         buffer.get(chunk);
 
@@ -96,5 +94,15 @@ public class ReadapMessageClient {
 
     }
 
+    public Byte getCode() {
+        return code;
+    }
 
+    public byte[] getChunk() {
+        return chunk;
+    }
+
+    public short getChunkLength() {
+        return chunkLength;
+    }
 }
