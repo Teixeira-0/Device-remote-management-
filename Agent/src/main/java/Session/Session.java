@@ -55,7 +55,7 @@ public class Session implements Runnable {
             case ReadapCodes.EXIT:
                 Thread.currentThread().interrupt();
         }
-        
+
 
         }catch (Exception e){
 

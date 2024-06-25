@@ -6,27 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapMessage.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapMessage.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Connection/RemoteExecutionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Connection/RemoteExecutionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapMessageClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapMessageClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Connection/RemoteExecutionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Connection/RemoteExecutionController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/.READAP.vpp.lck" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Docs/READAP.vpp" beforeDir="false" afterPath="$PROJECT_DIR$/Docs/READAP.vpp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +220,7 @@
       <workItem from="1716909771106" duration="11872000" />
       <workItem from="1718389041378" duration="22524000" />
       <workItem from="1718993202360" duration="26860000" />
-      <workItem from="1719311025423" duration="5813000" />
+      <workItem from="1719311025423" duration="7168000" />
     </task>
     <servers />
   </component>
