@@ -21,6 +21,7 @@ public class ClientAppSettings {
     private static final String TRUSTSTORE_PATH = "TruststorePath";
     private static final String TRUSTSTORE_TYPE = "TruststoreType";
     private static final String CONTEXT_PROTOCOL = "ContextProtocol";
+    private static final String PAYLOAD_MAXIMUM_SIZE = "PayloadMaximumSize";
 
     private final Properties applicationProperties = new Properties();
 
@@ -66,6 +67,9 @@ public class ClientAppSettings {
         //Default Context Protocol
         this.applicationProperties.setProperty(CONTEXT_PROTOCOL,"TLS");
 
+        //Default Payload Maximum Size
+        this.applicationProperties.setProperty(PAYLOAD_MAXIMUM_SIZE,"8192");
+
     }
 
     public Integer getConnectionPort(){
@@ -102,5 +106,9 @@ public class ClientAppSettings {
 
     public String getProperty(final String prop) {
         return this.applicationProperties.getProperty(prop);
+    }
+
+    public Integer getPayloadMaximumSize(){
+        return  Integer.valueOf(this.applicationProperties.getProperty(PAYLOAD_MAXIMUM_SIZE));
     }
 }

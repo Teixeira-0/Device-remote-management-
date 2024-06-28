@@ -23,7 +23,7 @@ public class Agent implements CommandLineRunner {
     }
 
     @Override
-    public void run(String... args) throws IOException, InterruptedException {
+    public void run(String... args) {
         connectionHandler.handleConnectionRequest();
     }
 

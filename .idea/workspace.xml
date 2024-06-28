@@ -5,9 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Connection/ConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Connection/RemoteExecutionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/RemoteExecutionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Initializer/Agent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Protocol/ReadapMessageClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Protocol/ReadapMessageClientTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapMessageClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapMessageClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Protocol/ReadapMessageClientTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Protocol/ReadapMessageClientTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +30,17 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -37,34 +54,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;2-i-want-to-establish-a-connection-with-an-agent-device&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "2-i-want-to-establish-a-connection-with-an-agent-device",
+    "jdk.selected.JAVA_MODULE": "openjdk-18",
+    "last_directory_selection": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java",
+    "last_opened_file_path": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -81,6 +98,7 @@
       <recent name="Intializer" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Connection" />
       <recent name="Protocol" />
     </key>
   </component>
@@ -92,15 +110,49 @@
     </option>
   </component>
   <component name="RunManager" selected="Spring Boot.Agent">
-    <configuration name="Client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Intializer.Client" />
+    <configuration name="ClientConnectionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Initializer.*" />
+          <option name="PATTERN" value="Connection.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="Connection" />
+      <option name="MAIN_CLASS_NAME" value="Connection.ClientConnectionHandlerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientConnectionHandlerTest.establishSession" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Connection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Connection" />
+      <option name="MAIN_CLASS_NAME" value="Connection.ClientConnectionHandlerTest" />
+      <option name="METHOD_NAME" value="establishSession" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientConnectionHandlerTest.handleConnectionRequest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Connection.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Connection" />
+      <option name="MAIN_CLASS_NAME" value="Connection.ClientConnectionHandlerTest" />
+      <option name="METHOD_NAME" value="handleConnectionRequest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -120,7 +172,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ReadapMessageClientTest.toByteArray" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ReadapMessageClientTest.fromByteArrayRemainder" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -130,21 +182,15 @@
       </extension>
       <option name="PACKAGE_NAME" value="Protocol" />
       <option name="MAIN_CLASS_NAME" value="Protocol.ReadapMessageClientTest" />
-      <option name="METHOD_NAME" value="toByteArray" />
+      <option name="METHOD_NAME" value="fromByteArrayRemainder" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Agent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" temporary="true" nameIsGenerated="true">
+    <configuration name="Agent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
       <module name="Agent" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Initializer.Agent" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Initializer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -177,20 +223,22 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.Client" />
+      <item itemvalue="JUnit.ClientConnectionHandlerTest" />
+      <item itemvalue="JUnit.ClientConnectionHandlerTest.establishSession" />
+      <item itemvalue="JUnit.ClientConnectionHandlerTest.handleConnectionRequest" />
+      <item itemvalue="JUnit.ReadapMessageClientTest.fromByteArrayRemainder" />
       <item itemvalue="JUnit.ReadapMessageClientTest" />
-      <item itemvalue="JUnit.ReadapMessageClientTest.toByteArray" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Client" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.Agent" />
-        <item itemvalue="JUnit.ReadapMessageClientTest.toByteArray" />
+        <item itemvalue="JUnit.ClientConnectionHandlerTest.establishSession" />
+        <item itemvalue="JUnit.ClientConnectionHandlerTest" />
+        <item itemvalue="JUnit.ClientConnectionHandlerTest.handleConnectionRequest" />
         <item itemvalue="JUnit.ReadapMessageClientTest" />
-        <item itemvalue="Application.Client" />
-        <item itemvalue="Spring Boot.Client" />
+        <item itemvalue="JUnit.ReadapMessageClientTest.fromByteArrayRemainder" />
       </list>
     </recent_temporary>
   </component>
@@ -219,6 +267,7 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
+      <workItem from="1719586648001" duration="7709000" />
     </task>
     <servers />
   </component>
@@ -229,9 +278,9 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/test/java/Protocol/ReadapMessageClientTest.java</url>
-          <line>12</line>
-          <option name="timeStamp" value="17" />
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/RemoteExecutionController.java</url>
+          <line>28</line>
+          <option name="timeStamp" value="28" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

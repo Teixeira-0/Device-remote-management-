@@ -15,7 +15,7 @@
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="Agent" options="-parameters" />
       <module name="Client" options="-parameters" />
-      <module name="READAP" options="-parameters" />
+      <module name="READAP" options="" />
     </option>
   </component>
 </project>
