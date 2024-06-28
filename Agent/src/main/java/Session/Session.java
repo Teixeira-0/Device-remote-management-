@@ -123,7 +123,7 @@ public class Session implements Runnable {
 
         byte[] chunk = new byte[payloadMaximumSize + 4];
         ReadapMessage receivedMessage;
-        byte[] fileBytes = new byte[8192];
+        byte[] fileBytes ;
 
 
         File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/AgentFolderPath/test.txt");
@@ -151,7 +151,7 @@ public class Session implements Runnable {
                 out.flush();
 
             }else {
-                fileBytes = new byte[8192];
+                fileBytes = new byte[payloadMaximumSize];
                 bufferedInputStream.read(fileBytes, (int) 0, payloadMaximumSize);
 
                 ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);

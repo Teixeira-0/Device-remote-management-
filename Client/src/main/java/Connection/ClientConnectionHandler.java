@@ -28,9 +28,6 @@ public class ClientConnectionHandler {
     public ClientConnectionHandler (ClientTLSProvider tlsProvider){
 
         this.serverSocketFactory = tlsProvider.tlsConnection();
-
-        //Pre-Populate session Pool to reduce overhead
-        this.prePopulateSessionPool();
     }
 
     public SSLSocket handleConnectionRequest(String host, Integer port) {
@@ -58,25 +55,20 @@ public class ClientConnectionHandler {
 
     }
 
-    private void establishSession(SSLSocket connectionSocket) throws InterruptedException {
+    private void establishSession(SSLSocket connectionSocket) {
 
-        ClientSession session = sessionPool.take();
+        ClientSession session = new ClientSession();
         session.establishSocket(connectionSocket);
         sessionsMap.put(session.getSESSION_ID(),session);
 
+        /*
         System.out.println("Sessions " + sessionsMap.size());
         for (Map.Entry<Integer, ClientSession> s: sessionsMap.entrySet()) {
             System.out.println(s.getKey());
         }
+         */
 
         //session.downloadThread.start();
-    }
-
-    private void prePopulateSessionPool(){
-        for (int i = 0; i < ClientApplication.settings().getSessionPoolSize(); i ++){
-            ClientSession session = new ClientSession();
-            sessionPool.add(session);
-        }
     }
 
 
