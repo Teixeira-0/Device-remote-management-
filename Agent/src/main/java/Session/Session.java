@@ -3,6 +3,7 @@ package Session;
 
 import Protocol.ReadapCodes;
 import Protocol.ReadapMessage;
+import Settings.Application;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.net.ssl.SSLSocket;
@@ -18,6 +19,8 @@ public class Session implements Runnable {
     private SSLSocket sessionSocket;
     private static int SESSION_ID_GENERATOR = 0;
     private final int SESSION_ID;
+
+    private static int payloadMaximumSize = Application.settings().getPayloadMaximumSize();
 
 
     public int getSESSION_ID() {
@@ -43,7 +46,7 @@ public class Session implements Runnable {
         InputStream in = sessionSocket.getInputStream();
         OutputStream out = sessionSocket.getOutputStream();
 
-        byte [] chunk = new byte[8196];
+        byte [] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
 
         ReadapMessage receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
@@ -85,7 +88,7 @@ public class Session implements Runnable {
 
 
         //Client response to initial message with the download length
-        byte [] chunk = new byte[8200];
+        byte [] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
         response =  ReadapMessage.fromByteArray(chunk);
 
@@ -99,7 +102,7 @@ public class Session implements Runnable {
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
 
-        for (int i = 0; i < fileLength; i = i + 8192) {
+        for (int i = 0; i < fileLength; i = i + payloadMaximumSize) {
 
             try {
                 in.read(chunk);
@@ -118,7 +121,7 @@ public class Session implements Runnable {
 
     public void downloadData(InputStream in, OutputStream out) throws IOException {
 
-        byte[] chunk = new byte[8192];
+        byte[] chunk = new byte[payloadMaximumSize + 4];
         ReadapMessage receivedMessage;
         byte[] fileBytes = new byte[8192];
 
@@ -138,7 +141,7 @@ public class Session implements Runnable {
         long i = 0;
         while(i < file.length()) {
 
-            if(i + 8192 > file.length()){
+            if(i + payloadMaximumSize > file.length()){
                 long remainder = file.length() - i;
                 fileBytes = new byte[(int)remainder];
                 bufferedInputStream.read(fileBytes, 0, (int)remainder);
@@ -149,7 +152,7 @@ public class Session implements Runnable {
 
             }else {
                 fileBytes = new byte[8192];
-                bufferedInputStream.read(fileBytes, (int) 0, 8192);
+                bufferedInputStream.read(fileBytes, (int) 0, payloadMaximumSize);
 
                 ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);
                 out.write(outputMessage.toByteArray());
@@ -164,7 +167,7 @@ public class Session implements Runnable {
                 }
             }
 
-            i = i + 8192;
+            i = i + payloadMaximumSize;
         }
 
         }catch (Exception e){
@@ -195,7 +198,7 @@ public class Session implements Runnable {
 
 
         //Read initial command
-        byte[] chunk = new byte[8196];
+        byte[] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
         ReadapMessage receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
@@ -223,7 +226,7 @@ public class Session implements Runnable {
                 while(!Objects.equals(line = reader.readLine(), "123098123214123")){
                     if(line != null) {
 
-                        if (s.length() + line.length() < 8192) {
+                        if (s.length() + line.length() < payloadMaximumSize) {
                             s.append(line).append('\0');
                         } else {
                             ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDMESSAGE, s.toString().getBytes());

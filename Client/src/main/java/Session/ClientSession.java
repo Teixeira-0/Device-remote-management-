@@ -2,6 +2,7 @@ package Session;
 
 import Protocol.ReadapCodesClient;
 import Protocol.ReadapMessageClient;
+import Settings.ClientApplication;
 
 import javax.net.ssl.SSLSocket;
 import java.io.*;
@@ -153,9 +154,10 @@ public class ClientSession {
             initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTESTART,new byte[0]);
             out.write(initialMessage.toByteArrayRemainder());
 
+            int payloadMaximumSize = ClientApplication.settings().getPayloadMaximumSize();
 
             //Server response to initial message
-            byte [] chunk = new byte[8196];
+            byte [] chunk = new byte[payloadMaximumSize + 4]; //payload + 2 Bytes and 1 Short
             in.read(chunk);
             response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
 
