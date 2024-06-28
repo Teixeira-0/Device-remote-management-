@@ -46,17 +46,20 @@ public class Session implements Runnable {
         byte [] chunk = new byte[8196];
         in.read(chunk);
 
-        ReadapMessage receivedMessage = ReadapMessage.fromByteArray(chunk);
+        ReadapMessage receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
         do{
             switch(receivedMessage.getCode()){
 
                 case ReadapCodes.REMOTESTART:
                     this.remoteShell(in,out);
+                    break;
                 case ReadapCodes.DONWLOAD:
                     this.downloadData(in,out);
+                    break;
                 case ReadapCodes.UPLOAD:
                     this.uploadData(in,out);
+                    break;
 
             }
 
@@ -173,11 +176,11 @@ public class Session implements Runnable {
     }
 
 
-    public void remoteShell(InputStream in, OutputStream out) throws IOException, InterruptedException {
+    public void remoteShell(InputStream in, OutputStream out) throws IOException {
 
         //Send ACk response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
-        out.write(response.toByteArray());
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK,  new byte[0]);
+        out.write(response.toByteArrayRemainder());
 
 
         //Initialize local variables
@@ -190,55 +193,22 @@ public class Session implements Runnable {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stdin));
         BufferedReader reader = new BufferedReader(new InputStreamReader(stdout));
 
-        //Map<Long, Thread> activeThreads = Collections.synchronizedMap(new HashMap<>());
-
-        /*
-        Thread monitor = new Thread(() -> {
-            while (true) {
-                try {
-                    Long current_time = System.currentTimeMillis();
-                    Long elapsed_time;
-
-                    synchronized (activeThreads) { // Synchronize on the map for iteration
-                        Iterator<Map.Entry<Long, Thread>> iterator = activeThreads.entrySet().iterator();
-
-                        while (iterator.hasNext()) {
-                            Map.Entry<Long, Thread> entry = iterator.next();
-                            Long start_time = entry.getKey();
-
-                            elapsed_time = current_time - start_time;
-
-                            if (elapsed_time > 10000) {
-                                Thread value = entry.getValue();
-                                value.interrupt();
-                                iterator.remove(); // Use iterator to remove the entry
-                                //System.out.println("Killed Thread: " + value.getName());
-                                //System.out.println("Active Threads: " + activeThreads.size());
-                            }
-                        }
-                    }
-                    Thread.sleep(1000); // Sleep to avoid busy-waiting
-                } catch (Exception e) {
-                    System.out.println(Arrays.toString(e.getStackTrace()));
-                }
-            }
-        });
-
-            monitor.start();
-         */
-
 
         //Read initial command
         byte[] chunk = new byte[8196];
         in.read(chunk);
-        ReadapMessage receivedMessage = ReadapMessage.fromByteArray(chunk);
+        ReadapMessage receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
         while (receivedMessage.getCode() == ReadapCodes.REMOTECOMMAND) {
 
             String input;
 
             //Transform message chunk into the desired command
-            while ((input = new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8)).isEmpty());
+            if ((input = new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8)).equals(" ;echo ;echo 123098123214123")){
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,"".getBytes());
+                out.write(outputMessage.toByteArrayRemainder());
+                break;
+            }
 
             //Send command to the ps buffer
             writer.write(input);
@@ -256,12 +226,12 @@ public class Session implements Runnable {
                         if (s.length() + line.length() < 8192) {
                             s.append(line).append('\0');
                         } else {
-                            ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDMESSAGE, 0, s.toString().getBytes());
-                            out.write(outputMessage.toByteArray());
+                            ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDMESSAGE, s.toString().getBytes());
+                            out.write(outputMessage.toByteArrayRemainder());
                             //FLUSH?????
 
                             in.read(chunk);
-                            receivedMessage = ReadapMessage.fromByteArray(chunk);
+                            receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
                             if(receivedMessage.getCode() != ReadapCodes.ACK){
                                 break;
@@ -275,18 +245,18 @@ public class Session implements Runnable {
                 }
 
                 //Send last chunk of output
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,0,s.toString().getBytes());
-                out.write(outputMessage.toByteArray());
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,s.toString().getBytes());
+                out.write(outputMessage.toByteArrayRemainder());
 
                 in.read(chunk);
-                receivedMessage = ReadapMessage.fromByteArray(chunk);
+                receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
                 if(receivedMessage.getCode() != ReadapCodes.ACK){
                     break;
                 }
 
                 in.read(chunk);
-                receivedMessage = ReadapMessage.fromByteArray(chunk);
+                receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
             } catch (Exception e) {
                 System.out.println(e.getMessage());

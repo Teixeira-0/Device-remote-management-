@@ -150,14 +150,14 @@ public class ClientSession {
 
 
             //Request to start remote execution
-            initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTESTART,0,new byte[0]);
-            out.write(initialMessage.toByteArray());
+            initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTESTART,new byte[0]);
+            out.write(initialMessage.toByteArrayRemainder());
 
 
             //Server response to initial message
             byte [] chunk = new byte[8196];
             in.read(chunk);
-            response =  ReadapMessageClient.fromByteArray(chunk);
+            response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
 
             if(response.getCode() != ReadapCodesClient.ACK){
                 //END CONNECTION
@@ -165,15 +165,15 @@ public class ClientSession {
 
 
             //Send command
-            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND,0,(command +" ;echo ;echo 123098123214123").getBytes());
-            out.write(message.toByteArray());
+            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND,(command +" ;echo ;echo 123098123214123").getBytes());
+            out.write(message.toByteArrayRemainder());
 
 
             do{
 
                 //obtain response
                 in.read(chunk);
-                response =  ReadapMessageClient.fromByteArray(chunk);
+                response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
 
                 //handle output in a string
                 String[] output =  new String(response.getChunk(), 0, response.getChunkLength(), StandardCharsets.UTF_8).split("\0");
@@ -184,14 +184,16 @@ public class ClientSession {
                     //Thread.sleep(50);
                 }
 
-                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, 0, new byte[0]);
-                out.write(message.toByteArray());
+                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, new byte[0]);
+                out.write(message.toByteArrayRemainder());
 
             } while(response.getCode() == ReadapCodesClient.REMOTECOMMANDMESSAGE);
 
-            //Request to exit remote execution
-            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTEEXIT,0,new byte[0]);
-            out.write(message.toByteArray());
+            if(!command.isEmpty()) {
+                //Request to exit remote execution
+                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTEEXIT, new byte[0]);
+                out.write(message.toByteArrayRemainder());
+            }
 
 
         }catch (Exception e){
@@ -213,14 +215,14 @@ public class ClientSession {
 
 
             //Request to start remote execution
-            initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTESTART,0,new byte[0]);
-            out.write(initialMessage.toByteArray());
+            initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTESTART,new byte[0]);
+            out.write(initialMessage.toByteArrayRemainder());
 
 
             //Server response to initial message
             byte [] chunk = new byte[8196];
             in.read(chunk);
-            response =  ReadapMessageClient.fromByteArray(chunk);
+            response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
 
             if(response.getCode() != ReadapCodesClient.ACK){
                 //END CONNECTION
@@ -232,15 +234,15 @@ public class ClientSession {
 
 
                 //Send command
-                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND, 0, (command + " ;echo ;echo 123098123214123").getBytes());
-                out.write(message.toByteArray());
+                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND, (command + " ;echo ;echo 123098123214123").getBytes());
+                out.write(message.toByteArrayRemainder());
 
 
                 do {
 
                     //obtain response
                     in.read(chunk);
-                    response = ReadapMessageClient.fromByteArray(chunk);
+                    response = ReadapMessageClient.fromByteArrayRemainder(chunk);
 
                     //handle output in a string
                     String[] output = new String(response.getChunk(), 0, response.getChunkLength(), StandardCharsets.UTF_8).split("\0");
@@ -251,15 +253,15 @@ public class ClientSession {
                         //Thread.sleep(50);
                     }
 
-                    message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, 0, new byte[0]);
-                    out.write(message.toByteArray());
+                    message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, new byte[0]);
+                    out.write(message.toByteArrayRemainder());
 
                 } while (response.getCode() == ReadapCodesClient.REMOTECOMMANDMESSAGE);
 
             }
             //Request to exit remote execution
-            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTEEXIT,0,new byte[0]);
-            out.write(message.toByteArray());
+            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTEEXIT,new byte[0]);
+            out.write(message.toByteArrayRemainder());
 
 
         }catch (Exception e){
