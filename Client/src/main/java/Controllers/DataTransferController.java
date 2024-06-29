@@ -31,10 +31,10 @@ public class DataTransferController {
     }
 
     @GetMapping("/upload")
-    public ResponseEntity<Map<String, Object>> uploadData () throws IOException {
+    public ResponseEntity<Map<String, Object>> uploadData (@RequestParam("path") String path,@RequestParam("sessionid") int id) throws IOException {
 
-        ClientSession session = ClientConnectionHandler.searchSessionById(1);
-        session.uploadData();
+        ClientSession session = ClientConnectionHandler.searchSessionById(id);
+        session.uploadData(path);
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

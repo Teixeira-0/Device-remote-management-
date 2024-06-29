@@ -8,18 +8,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgentFolderPath/transfered.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/AgentFolderPath/transfered.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientFolderPath/transferedfile.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientFolderPath/transferedfile.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientFolderPath/transfered.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientFolderPath/transfered.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +114,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Agent">
+  <component name="RunManager" selected="Spring Boot.Client (1)">
     <configuration name="ClientConnectionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
@@ -202,13 +207,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
-      <module name="Client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Intializer.Client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Client" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Intializer.Client" />
@@ -229,7 +227,6 @@
       <item itemvalue="JUnit.ReadapMessageClientTest.fromByteArrayRemainder" />
       <item itemvalue="JUnit.ReadapMessageClientTest" />
       <item itemvalue="Spring Boot.Client (1)" />
-      <item itemvalue="Spring Boot.Client" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
@@ -267,7 +264,7 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
-      <workItem from="1719586648001" duration="16891000" />
+      <workItem from="1719586648001" duration="27356000" />
     </task>
     <servers />
   </component>
@@ -278,14 +275,24 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
-          <line>156</line>
-          <option name="timeStamp" value="30" />
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/RemoteExecutionController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="35" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
-          <line>182</line>
-          <option name="timeStamp" value="31" />
+          <line>51</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="42" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -61,13 +61,14 @@ public class Session implements Runnable {
                     this.downloadData(in,out,receivedMessage.getChunk());
                     break;
                 case ReadapCodes.UPLOAD:
-                    this.uploadData(in,out);
+                    String p =  new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8);
+                    this.uploadData(in,out, p);
                     break;
 
             }
 
             in.read(chunk);
-            receivedMessage = ReadapMessage.fromByteArray(chunk);
+            receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
         }while(receivedMessage.getCode() != ReadapCodes.EXIT);
 
             Thread.currentThread().interrupt();
@@ -78,11 +79,11 @@ public class Session implements Runnable {
 
     }
 
-    public void uploadData(InputStream in, OutputStream out) throws IOException {
+    public void uploadData(InputStream in, OutputStream out,String fileName) throws IOException {
 
         //Send ACk response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
-        out.write(response.toByteArray());
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.UPLOADACK,  new byte[0]);
+        out.write(response.toByteArrayRemainder());
 
         ReadapMessage message;
 
@@ -90,15 +91,16 @@ public class Session implements Runnable {
         //Client response to initial message with the download length
         byte [] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
-        response =  ReadapMessage.fromByteArray(chunk);
+        response =  ReadapMessage.fromByteArrayRemainder(chunk);
 
         long fileLength = ByteBuffer.wrap(response.getChunk()).getLong();
 
-        if(response.getCode() != ReadapCodes.ACK){
+        if(response.getCode() != ReadapCodes.UPLOADACK){
             //END CONNECTION
         }
 
-        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/AgentFolderPath/transfered.pdf");
+
+        File file = new File(Application.settings().getUploadFolder() + "/"+ fileName);
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
 
@@ -106,14 +108,14 @@ public class Session implements Runnable {
 
             try {
                 in.read(chunk);
-                response = ReadapMessage.fromByteArray(chunk);
+                response = ReadapMessage.fromByteArrayRemainder(chunk);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
             bufferedOutputStream.write(response.getChunk(),0,response.getChunkLength());
 
-            message = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
-            out.write(message.toByteArray());
+            message = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.UPLOADACK, new byte[0]);
+            out.write(message.toByteArrayRemainder());
         }
 
         bufferedOutputStream.flush();
@@ -129,7 +131,7 @@ public class Session implements Runnable {
         File file = new File(new String(path,StandardCharsets.UTF_8));
 
         //Send download length response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADACK, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
         out.write(response.toByteArrayRemainder());
 
         //Ack
@@ -147,7 +149,7 @@ public class Session implements Runnable {
                 fileBytes = new byte[(int)remainder];
                 bufferedInputStream.read(fileBytes, 0, (int)remainder);
 
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, fileBytes);
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADPAYLOAD, fileBytes);
                 out.write(outputMessage.toByteArrayRemainder());
                 out.flush();
 
@@ -155,14 +157,14 @@ public class Session implements Runnable {
                 fileBytes = new byte[payloadMaximumSize];
                 bufferedInputStream.read(fileBytes, 0, payloadMaximumSize);
 
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, fileBytes);
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADPAYLOAD, fileBytes);
                 out.write(outputMessage.toByteArrayRemainder());
                 out.flush();
 
                 in.read(chunk);
                 receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                if(receivedMessage.getCode() != ReadapCodes.ACK){
+                if(receivedMessage.getCode() != ReadapCodes.DOWNLOADACK){
                     break;
                 }
             }
@@ -180,7 +182,7 @@ public class Session implements Runnable {
     public void remoteShell(InputStream in, OutputStream out) throws IOException {
 
         //Send ACk response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADACK,  new byte[0]);
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTEACK,  new byte[0]);
         out.write(response.toByteArrayRemainder());
 
 
@@ -234,7 +236,7 @@ public class Session implements Runnable {
                             in.read(chunk);
                             receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                            if(receivedMessage.getCode() != ReadapCodes.DOWNLOADACK){
+                            if(receivedMessage.getCode() != ReadapCodes.REMOTEACK){
                                 break;
                             }
 
@@ -252,7 +254,7 @@ public class Session implements Runnable {
                 in.read(chunk);
                 receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                if(receivedMessage.getCode() != ReadapCodes.DOWNLOADACK){
+                if(receivedMessage.getCode() != ReadapCodes.REMOTEACK){
                     break;
                 }
 

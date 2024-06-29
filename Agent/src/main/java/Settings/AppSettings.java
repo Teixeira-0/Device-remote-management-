@@ -21,6 +21,7 @@ public class AppSettings {
     private static final String TRUSTSTORE_TYPE = "TruststoreType";
     private static final String CONTEXT_PROTOCOL = "ContextProtocol";
     private static final String PAYLOAD_MAXIMUM_SIZE = "PayloadMaximumSize";
+    private static final String UPLOAD_FOLDER = "UploadFolder";
 
     private final Properties applicationProperties = new Properties();
 
@@ -109,5 +110,9 @@ public class AppSettings {
 
     public Integer getPayloadMaximumSize(){
         return  Integer.valueOf(this.applicationProperties.getProperty(PAYLOAD_MAXIMUM_SIZE));
+    }
+
+    public String getUploadFolder(){
+        return this.applicationProperties.getProperty(UPLOAD_FOLDER);
     }
 }
