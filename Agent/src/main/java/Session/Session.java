@@ -3,6 +3,7 @@ package Session;
 
 import Protocol.ReadapCodes;
 import Protocol.ReadapMessage;
+import Settings.Application;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.net.ssl.SSLSocket;
@@ -18,6 +19,8 @@ public class Session implements Runnable {
     private SSLSocket sessionSocket;
     private static int SESSION_ID_GENERATOR = 0;
     private final int SESSION_ID;
+
+    private static int payloadMaximumSize = Application.settings().getPayloadMaximumSize();
 
 
     public int getSESSION_ID() {
@@ -43,25 +46,29 @@ public class Session implements Runnable {
         InputStream in = sessionSocket.getInputStream();
         OutputStream out = sessionSocket.getOutputStream();
 
-        byte [] chunk = new byte[8196];
+        byte [] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
 
-        ReadapMessage receivedMessage = ReadapMessage.fromByteArray(chunk);
+        ReadapMessage receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
         do{
             switch(receivedMessage.getCode()){
 
                 case ReadapCodes.REMOTESTART:
                     this.remoteShell(in,out);
+                    break;
                 case ReadapCodes.DONWLOAD:
-                    this.downloadData(in,out);
+                    this.downloadData(in,out,receivedMessage.getChunk());
+                    break;
                 case ReadapCodes.UPLOAD:
-                    this.uploadData(in,out);
+                    String p =  new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8);
+                    this.uploadData(in,out, p);
+                    break;
 
             }
 
             in.read(chunk);
-            receivedMessage = ReadapMessage.fromByteArray(chunk);
+            receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
         }while(receivedMessage.getCode() != ReadapCodes.EXIT);
 
             Thread.currentThread().interrupt();
@@ -72,60 +79,62 @@ public class Session implements Runnable {
 
     }
 
-    public void uploadData(InputStream in, OutputStream out) throws IOException {
+    public void uploadData(InputStream in, OutputStream out,String fileName) throws IOException {
 
         //Send ACk response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
-        out.write(response.toByteArray());
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.UPLOADACK,  new byte[0]);
+        out.write(response.toByteArrayRemainder());
 
         ReadapMessage message;
 
 
         //Client response to initial message with the download length
-        byte [] chunk = new byte[8200];
+        byte [] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
-        response =  ReadapMessage.fromByteArray(chunk);
+        response =  ReadapMessage.fromByteArrayRemainder(chunk);
 
         long fileLength = ByteBuffer.wrap(response.getChunk()).getLong();
 
-        if(response.getCode() != ReadapCodes.ACK){
+        if(response.getCode() != ReadapCodes.UPLOADACK){
             //END CONNECTION
         }
 
-        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/AgentFolderPath/transfered.pdf");
+
+        File file = new File(Application.settings().getUploadFolder() + "/"+ fileName);
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
 
-        for (int i = 0; i < fileLength; i = i + 8192) {
+        for (int i = 0; i < fileLength; i = i + payloadMaximumSize) {
 
             try {
                 in.read(chunk);
-                response = ReadapMessage.fromByteArray(chunk);
+                response = ReadapMessage.fromByteArrayRemainder(chunk);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
             bufferedOutputStream.write(response.getChunk(),0,response.getChunkLength());
 
-            message = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
-            out.write(message.toByteArray());
+            message = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.UPLOADACK, new byte[0]);
+            out.write(message.toByteArrayRemainder());
         }
 
         bufferedOutputStream.flush();
     }
 
-    public void downloadData(InputStream in, OutputStream out) throws IOException {
+    public void downloadData(InputStream in, OutputStream out,byte[] path) throws IOException {
 
-        byte[] chunk = new byte[8192];
+        byte[] chunk = new byte[payloadMaximumSize + 4];
         ReadapMessage receivedMessage;
-        byte[] fileBytes = new byte[8192];
+        byte[] fileBytes ;
 
 
-        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/AgentFolderPath/test.txt");
+        File file = new File(new String(path,StandardCharsets.UTF_8));
 
         //Send download length response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
-        out.write(response.toByteArray());
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADACK, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
+        out.write(response.toByteArrayRemainder());
 
+        //Ack
 
         FileInputStream fileInputStream = new FileInputStream(file);
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
@@ -135,49 +144,46 @@ public class Session implements Runnable {
         long i = 0;
         while(i < file.length()) {
 
-            if(i + 8192 > file.length()){
+            if(i + payloadMaximumSize > file.length()){
                 long remainder = file.length() - i;
                 fileBytes = new byte[(int)remainder];
                 bufferedInputStream.read(fileBytes, 0, (int)remainder);
 
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);
-                out.write(outputMessage.toByteArray());
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADPAYLOAD, fileBytes);
+                out.write(outputMessage.toByteArrayRemainder());
                 out.flush();
 
             }else {
-                fileBytes = new byte[8192];
-                bufferedInputStream.read(fileBytes, (int) 0, 8192);
+                fileBytes = new byte[payloadMaximumSize];
+                bufferedInputStream.read(fileBytes, 0, payloadMaximumSize);
 
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);
-                out.write(outputMessage.toByteArray());
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADPAYLOAD, fileBytes);
+                out.write(outputMessage.toByteArrayRemainder());
                 out.flush();
 
-
                 in.read(chunk);
-                receivedMessage = ReadapMessage.fromByteArray(chunk);
+                receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                if(receivedMessage.getCode() != ReadapCodes.ACK){
+                if(receivedMessage.getCode() != ReadapCodes.DOWNLOADACK){
                     break;
                 }
             }
 
-            i = i + 8192;
+            i = i + payloadMaximumSize;
         }
 
         }catch (Exception e){
             System.out.println(e);
         }
 
-
-
     }
 
 
-    public void remoteShell(InputStream in, OutputStream out) throws IOException, InterruptedException {
+    public void remoteShell(InputStream in, OutputStream out) throws IOException {
 
         //Send ACk response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, new byte[0]);
-        out.write(response.toByteArray());
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTEACK,  new byte[0]);
+        out.write(response.toByteArrayRemainder());
 
 
         //Initialize local variables
@@ -190,55 +196,22 @@ public class Session implements Runnable {
         BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stdin));
         BufferedReader reader = new BufferedReader(new InputStreamReader(stdout));
 
-        //Map<Long, Thread> activeThreads = Collections.synchronizedMap(new HashMap<>());
-
-        /*
-        Thread monitor = new Thread(() -> {
-            while (true) {
-                try {
-                    Long current_time = System.currentTimeMillis();
-                    Long elapsed_time;
-
-                    synchronized (activeThreads) { // Synchronize on the map for iteration
-                        Iterator<Map.Entry<Long, Thread>> iterator = activeThreads.entrySet().iterator();
-
-                        while (iterator.hasNext()) {
-                            Map.Entry<Long, Thread> entry = iterator.next();
-                            Long start_time = entry.getKey();
-
-                            elapsed_time = current_time - start_time;
-
-                            if (elapsed_time > 10000) {
-                                Thread value = entry.getValue();
-                                value.interrupt();
-                                iterator.remove(); // Use iterator to remove the entry
-                                //System.out.println("Killed Thread: " + value.getName());
-                                //System.out.println("Active Threads: " + activeThreads.size());
-                            }
-                        }
-                    }
-                    Thread.sleep(1000); // Sleep to avoid busy-waiting
-                } catch (Exception e) {
-                    System.out.println(Arrays.toString(e.getStackTrace()));
-                }
-            }
-        });
-
-            monitor.start();
-         */
-
 
         //Read initial command
-        byte[] chunk = new byte[8196];
+        byte[] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
-        ReadapMessage receivedMessage = ReadapMessage.fromByteArray(chunk);
+        ReadapMessage receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
         while (receivedMessage.getCode() == ReadapCodes.REMOTECOMMAND) {
 
             String input;
 
             //Transform message chunk into the desired command
-            while ((input = new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8)).isEmpty());
+            if ((input = new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8)).equals(" ;echo ;echo 123098123214123")){
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,"".getBytes());
+                out.write(outputMessage.toByteArrayRemainder());
+                break;
+            }
 
             //Send command to the ps buffer
             writer.write(input);
@@ -253,17 +226,17 @@ public class Session implements Runnable {
                 while(!Objects.equals(line = reader.readLine(), "123098123214123")){
                     if(line != null) {
 
-                        if (s.length() + line.length() < 8192) {
+                        if (s.length() + line.length() < payloadMaximumSize) {
                             s.append(line).append('\0');
                         } else {
-                            ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDMESSAGE, 0, s.toString().getBytes());
-                            out.write(outputMessage.toByteArray());
+                            ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDMESSAGE, s.toString().getBytes());
+                            out.write(outputMessage.toByteArrayRemainder());
                             //FLUSH?????
 
                             in.read(chunk);
-                            receivedMessage = ReadapMessage.fromByteArray(chunk);
+                            receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                            if(receivedMessage.getCode() != ReadapCodes.ACK){
+                            if(receivedMessage.getCode() != ReadapCodes.REMOTEACK){
                                 break;
                             }
 
@@ -275,18 +248,18 @@ public class Session implements Runnable {
                 }
 
                 //Send last chunk of output
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,0,s.toString().getBytes());
-                out.write(outputMessage.toByteArray());
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,s.toString().getBytes());
+                out.write(outputMessage.toByteArrayRemainder());
 
                 in.read(chunk);
-                receivedMessage = ReadapMessage.fromByteArray(chunk);
+                receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                if(receivedMessage.getCode() != ReadapCodes.ACK){
+                if(receivedMessage.getCode() != ReadapCodes.REMOTEACK){
                     break;
                 }
 
                 in.read(chunk);
-                receivedMessage = ReadapMessage.fromByteArray(chunk);
+                receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
             } catch (Exception e) {
                 System.out.println(e.getMessage());

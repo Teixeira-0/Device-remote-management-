@@ -23,6 +23,7 @@ public class RemoteExecutionController {
     @GetMapping("/executesingle")
     public ResponseEntity<Map<String, Object>> initializeRemoteShellSingleCommand(@RequestParam("command") String command, @RequestParam("sessionid") List<Integer> sessionIds ){
 
+
         ClientSession session;
 
         for (Integer id: sessionIds) {
@@ -32,6 +33,7 @@ public class RemoteExecutionController {
             //For testing demo use this, real scenario would use threads connected to the websocket
             session.initializeRemoteShell();
         }
+
 
         return new ResponseEntity<>(HttpStatus.OK);
     }

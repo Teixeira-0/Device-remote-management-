@@ -4,6 +4,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
+import java.util.Arrays;
+import java.util.Objects;
 
 public class ReadapMessageClient {
 
@@ -104,5 +106,20 @@ public class ReadapMessageClient {
 
     public short getChunkLength() {
         return chunkLength;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ReadapMessageClient that = (ReadapMessageClient) o;
+        return chunkLength == that.chunkLength && Objects.equals(version, that.version) && Objects.equals(code, that.code) && Objects.equals(totalChunks, that.totalChunks) && Arrays.equals(chunk, that.chunk);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hash(version, code, totalChunks, chunkLength);
+        result = 31 * result + Arrays.hashCode(chunk);
+        return result;
     }
 }
