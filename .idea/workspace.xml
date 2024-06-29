@@ -6,25 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Protocol/ReadapCodes.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgentFolderPath/transfered.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/AgentFolderPath/transfered.txt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapCodesClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientFolderPath/transfered.pdf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientFolderPath/transfered.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,34 +46,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "2-i-want-to-establish-a-connection-with-an-agent-device",
-    "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "last_directory_selection": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java",
-    "last_opened_file_path": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;2-i-want-to-establish-a-connection-with-an-agent-device&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
@@ -114,7 +101,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.Client (1)">
+  <component name="RunManager" selected="Spring Boot.Agent">
     <configuration name="ClientConnectionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
@@ -264,7 +251,7 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
-      <workItem from="1719586648001" duration="27356000" />
+      <workItem from="1719586648001" duration="28408000" />
     </task>
     <servers />
   </component>
@@ -275,16 +262,6 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/RemoteExecutionController.java</url>
-          <line>26</line>
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
           <line>51</line>
           <option name="timeStamp" value="41" />
@@ -294,6 +271,15 @@
           <line>138</line>
           <option name="timeStamp" value="42" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="45" />
+        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.IllegalThreadStateException" package="java.lang" />
+          <option name="timeStamp" value="46" />
+        </breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
