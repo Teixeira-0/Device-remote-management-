@@ -58,7 +58,7 @@ public class Session implements Runnable {
                     this.remoteShell(in,out);
                     break;
                 case ReadapCodes.DONWLOAD:
-                    this.downloadData(in,out);
+                    this.downloadData(in,out,receivedMessage.getChunk());
                     break;
                 case ReadapCodes.UPLOAD:
                     this.uploadData(in,out);
@@ -119,19 +119,20 @@ public class Session implements Runnable {
         bufferedOutputStream.flush();
     }
 
-    public void downloadData(InputStream in, OutputStream out) throws IOException {
+    public void downloadData(InputStream in, OutputStream out,byte[] path) throws IOException {
 
         byte[] chunk = new byte[payloadMaximumSize + 4];
         ReadapMessage receivedMessage;
         byte[] fileBytes ;
 
 
-        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/AgentFolderPath/test.txt");
+        File file = new File(new String(path,StandardCharsets.UTF_8));
 
         //Send download length response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, 0, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
-        out.write(response.toByteArray());
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK, ByteBuffer.allocate(Long.BYTES).putLong(file.length()).array());
+        out.write(response.toByteArrayRemainder());
 
+        //Ack
 
         FileInputStream fileInputStream = new FileInputStream(file);
         BufferedInputStream bufferedInputStream = new BufferedInputStream(fileInputStream);
@@ -146,21 +147,20 @@ public class Session implements Runnable {
                 fileBytes = new byte[(int)remainder];
                 bufferedInputStream.read(fileBytes, 0, (int)remainder);
 
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);
-                out.write(outputMessage.toByteArray());
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, fileBytes);
+                out.write(outputMessage.toByteArrayRemainder());
                 out.flush();
 
             }else {
                 fileBytes = new byte[payloadMaximumSize];
-                bufferedInputStream.read(fileBytes, (int) 0, payloadMaximumSize);
+                bufferedInputStream.read(fileBytes, 0, payloadMaximumSize);
 
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, 0, fileBytes);
-                out.write(outputMessage.toByteArray());
+                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DONWLOAD, fileBytes);
+                out.write(outputMessage.toByteArrayRemainder());
                 out.flush();
 
-
                 in.read(chunk);
-                receivedMessage = ReadapMessage.fromByteArray(chunk);
+                receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
                 if(receivedMessage.getCode() != ReadapCodes.ACK){
                     break;
@@ -174,15 +174,13 @@ public class Session implements Runnable {
             System.out.println(e);
         }
 
-
-
     }
 
 
     public void remoteShell(InputStream in, OutputStream out) throws IOException {
 
         //Send ACk response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.ACK,  new byte[0]);
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.DOWNLOADACK,  new byte[0]);
         out.write(response.toByteArrayRemainder());
 
 
@@ -236,7 +234,7 @@ public class Session implements Runnable {
                             in.read(chunk);
                             receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                            if(receivedMessage.getCode() != ReadapCodes.ACK){
+                            if(receivedMessage.getCode() != ReadapCodes.DOWNLOADACK){
                                 break;
                             }
 
@@ -254,7 +252,7 @@ public class Session implements Runnable {
                 in.read(chunk);
                 receivedMessage = ReadapMessage.fromByteArrayRemainder(chunk);
 
-                if(receivedMessage.getCode() != ReadapCodes.ACK){
+                if(receivedMessage.getCode() != ReadapCodes.DOWNLOADACK){
                     break;
                 }
 

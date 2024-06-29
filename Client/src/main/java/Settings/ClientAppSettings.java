@@ -23,6 +23,7 @@ public class ClientAppSettings {
     private static final String CONTEXT_PROTOCOL = "ContextProtocol";
     private static final String PAYLOAD_MAXIMUM_SIZE = "PayloadMaximumSize";
 
+    private static final String DOWNLOAD_FOLDER = "DownloadFolder";
     private final Properties applicationProperties = new Properties();
 
     public ClientAppSettings(){
@@ -111,4 +112,8 @@ public class ClientAppSettings {
     public Integer getPayloadMaximumSize(){
         return  Integer.valueOf(this.applicationProperties.getProperty(PAYLOAD_MAXIMUM_SIZE));
     }
+
+   public String getDownloadFolder(){
+        return this.applicationProperties.getProperty(DOWNLOAD_FOLDER);
+   }
 }

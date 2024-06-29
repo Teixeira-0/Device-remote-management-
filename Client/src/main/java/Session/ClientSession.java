@@ -94,7 +94,7 @@ public class ClientSession {
         }
     }
 
-    public void downloadData() throws IOException {
+    public void downloadData(String path) throws IOException {
 
         InputStream in = sessionSocket.getInputStream();
         OutputStream out = sessionSocket.getOutputStream();
@@ -102,13 +102,13 @@ public class ClientSession {
         ReadapMessageClient message;
 
         //Request to start remote execution
-        ReadapMessageClient initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.DONWLOAD,0,new byte[0]);
-        out.write(initialMessage.toByteArray());
+        ReadapMessageClient initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.DONWLOAD,path.getBytes());
+        out.write(initialMessage.toByteArrayRemainder());
 
         //Server response to initial message with the download length
-        byte [] chunk = new byte[8200];
+        byte [] chunk = new byte[payloadMaximumSize + 4];
         in.read(chunk);
-        response =  ReadapMessageClient.fromByteArray(chunk);
+        response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
 
         long fileLength = ByteBuffer.wrap(response.getChunk()).getLong();
 
@@ -116,22 +116,24 @@ public class ClientSession {
             //END CONNECTION
         }
 
-        File file = new File("/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/ClientFolderPath/transferedfile.txt");
+        String [] savePath = path.split("/");
+        File file = new File(ClientApplication.settings().getDownloadFolder() + savePath[savePath.length -1]);
+
         FileOutputStream fileOutputStream = new FileOutputStream(file);
         BufferedOutputStream bufferedOutputStream = new BufferedOutputStream(fileOutputStream);
 
-        for (int i = 0; i < fileLength; i = i + 8192) {
+        for (int i = 0; i < fileLength; i = i + payloadMaximumSize) {
 
             try {
                 in.read(chunk);
-                response = ReadapMessageClient.fromByteArray(chunk);
+                response = ReadapMessageClient.fromByteArrayRemainder(chunk);
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
             bufferedOutputStream.write(response.getChunk(),0,response.getChunkLength());
 
-            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, 0, new byte[0]);
-            out.write(message.toByteArray());
+            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, new byte[0]);
+            out.write(message.toByteArrayRemainder());
         }
 
         bufferedOutputStream.flush();
@@ -162,7 +164,7 @@ public class ClientSession {
             in.read(chunk);
             response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
 
-            if(response.getCode() != ReadapCodesClient.ACK){
+            if(response.getCode() != ReadapCodesClient.DOWNLOADACK){
                 //END CONNECTION
             }
 
@@ -187,7 +189,7 @@ public class ClientSession {
                     //Thread.sleep(50);
                 }
 
-                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, new byte[0]);
+                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.DOWNLOADACK, new byte[0]);
                 out.write(message.toByteArrayRemainder());
 
             } while(response.getCode() == ReadapCodesClient.REMOTECOMMANDMESSAGE);
@@ -259,7 +261,7 @@ public class ClientSession {
                     message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, new byte[0]);
                     out.write(message.toByteArrayRemainder());
 
-                } while (response.getCode() == ReadapCodesClient.REMOTECOMMANDMESSAGE);
+                } while (response.getCode() == ReadapCodesClient.REMOTECOMMANDEND);
 
             }
             //Request to exit remote execution
