@@ -31,10 +31,17 @@ public class DataTransferController {
     }
 
     @GetMapping("/upload")
-    public ResponseEntity<Map<String, Object>> uploadData (@RequestParam("path") String path,@RequestParam("sessionid") int id) throws IOException {
+    public ResponseEntity<Map<String, Object>> uploadData (@RequestParam("path") String path, @RequestParam("sessionid") List<Integer> sessionIds){
 
-        ClientSession session = ClientConnectionHandler.searchSessionById(id);
-        session.uploadData(path);
+        ClientSession session;
+
+        for (Integer id: sessionIds) {
+            session = ClientConnectionHandler.searchSessionById(id);
+            session.setPath(path);
+
+            //For testing demo use this, real scenario would use threads connected to the websocket
+            session.uploadThread.start();
+        }
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
