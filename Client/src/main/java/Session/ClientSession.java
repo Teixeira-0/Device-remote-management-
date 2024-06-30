@@ -162,6 +162,45 @@ public class ClientSession {
     }
 
 
+    public void statusGathering(){
+
+        try{
+
+            InputStream in = sessionSocket.getInputStream();
+            OutputStream out = sessionSocket.getOutputStream();
+
+            //Request to start upload
+            ReadapMessageClient initialMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.STATUS,new byte[0]);
+            out.write(initialMessage.toByteArrayRemainder());
+
+            //Server response to initial message
+            byte [] chunk = new byte[payloadMaximumSize + 4]; //payload + 2 Bytes and 1 Short
+            in.read(chunk);
+            ReadapMessageClient response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
+
+            if(response.getCode() != ReadapCodesClient.REMOTEACK){
+                //END CONNECTION
+            }
+
+            //obtain response
+            in.read(chunk);
+             response =  ReadapMessageClient.fromByteArrayRemainder(chunk);
+
+            //handle output in a string
+            String[] output =  new String(response.getChunk(), 0, response.getChunkLength(), StandardCharsets.UTF_8).split("\0");
+
+
+            for (String s: output) {
+                System.out.println(s);
+                //Thread.sleep(50);
+            }
+
+        }catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+
+    }
+
     //SWITCH TO PRIVATE WITH THREAD
     public void initializeRemoteShell (){
 

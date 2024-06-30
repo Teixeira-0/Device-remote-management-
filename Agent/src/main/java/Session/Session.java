@@ -64,6 +64,9 @@ public class Session implements Runnable {
                     String p =  new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8);
                     this.uploadData(in,out, p);
                     break;
+                case ReadapCodes.STATUS:
+                    this.statusGathering(in,out);
+                    break;
 
             }
 
@@ -178,6 +181,47 @@ public class Session implements Runnable {
 
     }
 
+    public void statusGathering(InputStream in, OutputStream out) throws IOException {
+
+        //Send ACk response
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.STATUSACK,  new byte[0]);
+        out.write(response.toByteArrayRemainder());
+
+        //Initialize local variables
+        String cmd = "/bin/sh";
+        Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start();
+
+
+        OutputStream stdin = p.getOutputStream();
+        BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(stdin));
+
+        InputStream stdout = p.getInputStream();
+        BufferedReader reader = new BufferedReader(new InputStreamReader(stdout));
+
+
+        //Send command to the ps buffer
+        writer.write("top -l 1 | grep \"CPU usage\"" + " ;echo ;echo 123098123214123");
+        writer.newLine();
+        writer.flush();
+
+
+        StringBuilder s = new StringBuilder();
+        String line;
+
+
+        while(!Objects.equals(line = reader.readLine(), "123098123214123")){
+            if(line != null) {
+                s.append(line).append('\0');
+            }
+        }
+
+        //Send last chunk of output
+        ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.STATUSDATA,s.toString().getBytes());
+        out.write(outputMessage.toByteArrayRemainder());
+
+
+    }
+
 
     public void remoteShell(InputStream in, OutputStream out) throws IOException {
 
@@ -266,55 +310,7 @@ public class Session implements Runnable {
                 //System.out.println("Merdou");
             }
 
-
-
-
-/*
-            Thread d = getThread(reader, out);
-            Long current_time = System.currentTimeMillis();
-            activeThreads.put(current_time, d);
-
-            in.read(chunk);
-
-
- */
-
         }
     }
 
-    private static Thread getThread(BufferedReader reader,OutputStream out) {
-
-
-
-        Thread d = new Thread( () -> {
-
-            StringBuilder s = new StringBuilder();
-            String line;
-            try{
-                while(!Objects.equals(line = reader.readLine(), "0#%%64868$")){
-
-                    if(s.length() < 8192){
-                        s.append(line).append('\0');
-                    }else {
-                        ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDMESSAGE,0,s.toString().getBytes());
-                        out.write(outputMessage.toByteArray());
-                    }
-
-                }
-
-
-                ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,0,s.toString().getBytes());
-
-                out.write(outputMessage.toByteArray());
-
-
-            } catch (Exception e) {
-                System.out.println("Merdou");
-            }
-
-        });
-
-        d.start();
-        return d;
-    }
 }
