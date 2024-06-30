@@ -3,6 +3,7 @@ package Session;
 
 import Protocol.ReadapCodes;
 import Protocol.ReadapMessage;
+import Settings.AppSettings;
 import Settings.Application;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -37,10 +38,30 @@ public class Session implements Runnable {
         this.sessionSocket = agentSocket;
     }
 
+    private void setOs(){
+
+        String osName = System.getProperty("os.name").toLowerCase();
+
+        if (osName.contains("win")) {
+            System.out.println("The operating system is Windows.");
+            AppSettings.setOS("win");
+        } else if (osName.contains("mac")) {
+            System.out.println("The operating system is macOS.");
+            AppSettings.setOS("mac");
+        } else if (osName.contains("nix") || osName.contains("nux") || osName.contains("aix")) {
+            System.out.println("The operating system is Unix or Linux.");
+            AppSettings.setOS("nux");
+        } else {
+            System.out.println("The operating system is not recognized.");
+        }
+
+
+    }
+
     @Override
     public void run() {
         System.out.println("THREAD: " + Thread.currentThread().getName());
-
+        setOs();
         try{
 
         InputStream in = sessionSocket.getInputStream();

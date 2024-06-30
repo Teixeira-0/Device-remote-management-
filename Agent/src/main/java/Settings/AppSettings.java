@@ -23,6 +23,8 @@ public class AppSettings {
     private static final String PAYLOAD_MAXIMUM_SIZE = "PayloadMaximumSize";
     private static final String UPLOAD_FOLDER = "UploadFolder";
 
+    private static String OS = "OS";
+
     private final Properties applicationProperties = new Properties();
 
     public AppSettings() {
@@ -114,5 +116,9 @@ public class AppSettings {
 
     public String getUploadFolder(){
         return this.applicationProperties.getProperty(UPLOAD_FOLDER);
+    }
+
+    public static void setOS(String OS) {
+        AppSettings.OS = OS;
     }
 }
