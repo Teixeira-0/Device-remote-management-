@@ -14,7 +14,6 @@ public class ClientAppSettings {
 
     private static final String PROPERTIES_RESOURCE = "application.properties";
     private static final String CONNECTION_PORT = "ConnectionPort";
-    private static final String SESSION_POOL_SIZE = "SessionPoolSize";
     private static final String KEYSTORE_PATH = "KeystorePath";
     private static final String KEYSTORE_TYPE = "KeystoreType";
     private static final String MANAGERS_ALGORITHM = "ManagersAlgorithm";
@@ -22,7 +21,6 @@ public class ClientAppSettings {
     private static final String TRUSTSTORE_TYPE = "TruststoreType";
     private static final String CONTEXT_PROTOCOL = "ContextProtocol";
     private static final String PAYLOAD_MAXIMUM_SIZE = "PayloadMaximumSize";
-
     private static final String DOWNLOAD_FOLDER = "DownloadFolder";
     private final Properties applicationProperties = new Properties();
 
@@ -30,8 +28,12 @@ public class ClientAppSettings {
         loadProperties();
     }
 
+    protected InputStream getResourceAsStream(String resourceName) {
+        return this.getClass().getClassLoader().getResourceAsStream(resourceName);
+    }
+
     private void loadProperties() {
-        try (InputStream propertiesStream = this.getClass().getClassLoader().getResourceAsStream(PROPERTIES_RESOURCE)) {
+        try (InputStream propertiesStream = getResourceAsStream(PROPERTIES_RESOURCE)) {
             if (propertiesStream != null) {
 
                 this.applicationProperties.load(propertiesStream);
@@ -53,9 +55,6 @@ public class ClientAppSettings {
         //Default Connection Port
         this.applicationProperties.setProperty(CONNECTION_PORT,"61010");
 
-        //Default Session Pool Size
-        this.applicationProperties.setProperty(SESSION_POOL_SIZE,"15");
-
         //Default Keystore Type
         this.applicationProperties.setProperty(KEYSTORE_TYPE,"JKS");
 
@@ -75,10 +74,6 @@ public class ClientAppSettings {
 
     public Integer getConnectionPort(){
         return Integer.valueOf(this.applicationProperties.getProperty(CONNECTION_PORT));
-    }
-
-    public Integer getSessionPoolSize(){
-        return Integer.valueOf(this.applicationProperties.getProperty(SESSION_POOL_SIZE));
     }
 
     public String getKeystorePath(){
