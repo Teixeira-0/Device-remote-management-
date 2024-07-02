@@ -5,13 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/StatusController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/StatusController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Connection/ClientConnectionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Connection/ClientConnectionHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/StatusController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/StatusController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Protocol/ReadapCodesClient.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Protocol.ReadapMessageClientTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/Protocol.ReadapMessageClientTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Protocol.ReadapMessageClientTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Protocol.ReadapMessageClientTest.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +95,7 @@
       <recent name="Intializer" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Controllers" />
       <recent name="Settings" />
       <recent name="Connection" />
       <recent name="Protocol" />
@@ -102,38 +108,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClientApplicationTest">
-    <configuration name="ClientAppSettingsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Settings.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Settings" />
-      <option name="MAIN_CLASS_NAME" value="Settings.ClientAppSettingsTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientAppSettingsTest.testDefaultPropertiesLoadedWhenFileNotFound" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Settings.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Settings" />
-      <option name="MAIN_CLASS_NAME" value="Settings.ClientAppSettingsTest" />
-      <option name="METHOD_NAME" value="testDefaultPropertiesLoadedWhenFileNotFound" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.StatusControllerTest.testDownloadData_Success">
     <configuration name="ClientAppSettingsTest.testPropertiesLoadedFromFile" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
@@ -180,6 +155,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StatusControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.StatusControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StatusControllerTest.testDownloadData_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.StatusControllerTest" />
+      <option name="METHOD_NAME" value="testDownloadData_Success" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Agent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
       <module name="Agent" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Initializer.Agent" />
@@ -208,21 +214,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ClientAppSettingsTest" />
-      <item itemvalue="JUnit.ClientAppSettingsTest.testDefaultPropertiesLoadedWhenFileNotFound" />
       <item itemvalue="JUnit.ClientAppSettingsTest.testPropertiesLoadedFromFile" />
       <item itemvalue="JUnit.ClientApplicationTest" />
       <item itemvalue="JUnit.ClientConnectionHandlerTest" />
+      <item itemvalue="JUnit.StatusControllerTest" />
+      <item itemvalue="JUnit.StatusControllerTest.testDownloadData_Success" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StatusControllerTest.testDownloadData_Success" />
+        <item itemvalue="JUnit.StatusControllerTest" />
+        <item itemvalue="JUnit.ClientConnectionHandlerTest" />
         <item itemvalue="JUnit.ClientApplicationTest" />
         <item itemvalue="JUnit.ClientAppSettingsTest.testPropertiesLoadedFromFile" />
-        <item itemvalue="JUnit.ClientAppSettingsTest.testDefaultPropertiesLoadedWhenFileNotFound" />
-        <item itemvalue="JUnit.ClientConnectionHandlerTest" />
-        <item itemvalue="JUnit.ClientAppSettingsTest" />
       </list>
     </recent_temporary>
   </component>
@@ -251,12 +257,23 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
-      <workItem from="1719586648001" duration="40254000" />
+      <workItem from="1719586648001" duration="46172000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -267,8 +284,8 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/StatusController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="47" />
+          <line>26</line>
+          <option name="timeStamp" value="62" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

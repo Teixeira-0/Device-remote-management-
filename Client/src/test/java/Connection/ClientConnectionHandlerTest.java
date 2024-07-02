@@ -14,7 +14,7 @@ import javax.net.ssl.SSLSocketFactory;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-class ClientConnectionHandlerTest {
+public class ClientConnectionHandlerTest {
 
     @Mock
     private ClientTLSProvider mockClientTLSProvider;
@@ -106,7 +106,7 @@ class ClientConnectionHandlerTest {
 
     //Unit Test to verify that the created session is inserted and found on the hashmap
     @Test
-    void establishSession() throws Exception {
+    public void establishSession() throws Exception {
         //Test parameters
         String host = "localhost";
         int port = 61010;

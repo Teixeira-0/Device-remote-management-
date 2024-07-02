@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
-Test set: Protocol.ReadapMessageClientTest
+Test set: Controllers.StatusControllerTest
 -------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.015 s -- in Protocol.ReadapMessageClientTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.351 s -- in Controllers.StatusControllerTest

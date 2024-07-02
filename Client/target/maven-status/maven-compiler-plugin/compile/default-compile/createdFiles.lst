@@ -1,9 +1,9 @@
-Connection/ClientConnectionHandler.class
 Settings/ClientAppSettings.class
 Protocol/ReadapCodesClient.class
-Controllers/ConnectionController.class
 Intializer/Client.class
 Protocol/ReadapMessageClient.class
+Connection/ClientConnectionHandler.class
+Controllers/ConnectionController.class
 Controllers/DataTransferController.class
 Settings/ClientApplication.class
 Controllers/RemoteExecutionController.class
