@@ -5,17 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Protocol/ReadapCodes.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Connection/ClientConnectionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/ConnectionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Connection/ClientConnectionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Connection/ClientConnectionHandlerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/ConnectionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Controllers/ConnectionControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/StatusControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Controllers/StatusControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Connection/ClientConnectionHandlerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Connection/ClientConnectionHandlerTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Controllers/ConnectionControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Controllers/ConnectionControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,22 +104,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ConnectionControllerTest">
-    <configuration name="ClientConnectionHandlerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Connection.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Connection" />
-      <option name="MAIN_CLASS_NAME" value="Connection.ClientConnectionHandlerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.DataTransferControllerTest">
     <configuration name="ConnectionControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
@@ -138,7 +120,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConnectionControllerTest.testErrorConection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataTransferControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -147,14 +129,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.ConnectionControllerTest" />
-      <option name="METHOD_NAME" value="testErrorConection" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.DataTransferControllerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DataTransferControllerTest.testCorrectUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Controllers.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Controllers" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.DataTransferControllerTest" />
+      <option name="METHOD_NAME" value="testCorrectUpload" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ConnectionControllerTest.testSuccessFullConection" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DataTransferControllerTest.testincorrectUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -163,8 +160,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.ConnectionControllerTest" />
-      <option name="METHOD_NAME" value="testSuccessFullConection" />
+      <option name="MAIN_CLASS_NAME" value="Controllers.DataTransferControllerTest" />
+      <option name="METHOD_NAME" value="testincorrectUpload" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -214,21 +211,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ClientConnectionHandlerTest" />
       <item itemvalue="JUnit.ConnectionControllerTest" />
-      <item itemvalue="JUnit.ConnectionControllerTest.testErrorConection" />
-      <item itemvalue="JUnit.ConnectionControllerTest.testSuccessFullConection" />
+      <item itemvalue="JUnit.DataTransferControllerTest" />
+      <item itemvalue="JUnit.DataTransferControllerTest.testCorrectUpload" />
+      <item itemvalue="JUnit.DataTransferControllerTest.testincorrectUpload" />
       <item itemvalue="JUnit.StatusControllerTest.testDownloadData_Success" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ConnectionControllerTest" />
-        <item itemvalue="JUnit.ClientConnectionHandlerTest" />
-        <item itemvalue="JUnit.ConnectionControllerTest.testErrorConection" />
-        <item itemvalue="JUnit.ConnectionControllerTest.testSuccessFullConection" />
+        <item itemvalue="JUnit.DataTransferControllerTest" />
+        <item itemvalue="JUnit.DataTransferControllerTest.testincorrectUpload" />
+        <item itemvalue="JUnit.DataTransferControllerTest.testCorrectUpload" />
         <item itemvalue="JUnit.StatusControllerTest.testDownloadData_Success" />
+        <item itemvalue="JUnit.ConnectionControllerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -257,7 +254,7 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
-      <workItem from="1719586648001" duration="51379000" />
+      <workItem from="1719586648001" duration="53632000" />
     </task>
     <servers />
   </component>
@@ -282,6 +279,11 @@
           <properties class="java.lang.IllegalThreadStateException" package="java.lang" />
           <option name="timeStamp" value="46" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
+          <line>346</line>
+          <option name="timeStamp" value="72" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>

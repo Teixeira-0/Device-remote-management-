@@ -8,6 +8,8 @@ import javax.net.ssl.SSLSocket;
 import java.io.*;
 import java.nio.ByteBuffer;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Objects;
 import java.util.Scanner;
 
@@ -340,9 +342,15 @@ public class ClientSession {
         this.command = command;
     }
 
-    public void setPath(String path) {
+    public boolean setPath(String path) {
+
+        if(!Files.exists(Paths.get(path))){
+            return false;
+        }
         this.path = path;
+        return true;
     }
+
 
     public void establishSocket (SSLSocket agentSocket){
         this.sessionSocket = agentSocket;

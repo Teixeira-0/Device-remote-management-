@@ -64,8 +64,6 @@ class ConnectionControllerTest {
 
     @Test
     void testHostErrorConection() {
-        // Arrange: Create a mock SSLSocket
-        SSLSocket mockSocket = mock(SSLSocket.class);
 
         // Mock the behavior of the connection handler to return the mock socket
         when(connectionHandler.handleConnectionRequest("localhost", 61010)).thenReturn("host");

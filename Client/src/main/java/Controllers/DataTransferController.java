@@ -37,7 +37,10 @@ public class DataTransferController {
 
         for (Integer id: sessionIds) {
             session = ClientConnectionHandler.searchSessionById(id);
-            session.setPath(path);
+
+            if(!session.setPath(path)){
+                return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+            }
 
             //For testing demo use this, real scenario would use threads connected to the websocket
             session.uploadThread.start();
