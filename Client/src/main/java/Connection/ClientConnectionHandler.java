@@ -6,6 +6,8 @@ import Settings.ClientApplication;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import javax.net.ssl.*;
+import java.io.IOException;
+import java.net.ConnectException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.LinkedBlockingQueue;
@@ -18,8 +20,6 @@ public class ClientConnectionHandler {
     //private final ServerSocket agentSocket;
     private final SSLSocketFactory serverSocketFactory;
 
-    private final LinkedBlockingQueue<ClientSession> sessionPool = new LinkedBlockingQueue<ClientSession>();
-
     private static final HashMap<Integer, ClientSession> sessionsMap = new HashMap<Integer, ClientSession>();
 
     private final Logger logger = Logger.getLogger(ClientConnectionHandler.class.getName());
@@ -30,7 +30,7 @@ public class ClientConnectionHandler {
         this.serverSocketFactory = tlsProvider.tlsConnection();
     }
 
-    public SSLSocket handleConnectionRequest(String host, Integer port) {
+    public String handleConnectionRequest(String host, Integer port) {
         try{
 
                 SSLSocket sslSocket;
@@ -45,12 +45,18 @@ public class ClientConnectionHandler {
                 } else {
                     logger.warning("Handshake failed or session is not valid with " + sslSocket.getInetAddress());
                     sslSocket.close();
+                    return "certificate";
                 }
 
-            return sslSocket;
-        }catch (Exception e){
-            return null;
 
+            return "success";
+        }
+        catch (ConnectException connectException){
+            return "host";
+        }catch (IllegalArgumentException e){
+            return "port";
+        }catch (IOException e){
+            return null;
         }
 
     }

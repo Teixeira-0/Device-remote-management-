@@ -57,7 +57,7 @@ public class ClientConnectionHandlerTest {
         when(mockSession.isValid()).thenReturn(true);
 
         //Test method call
-        SSLSocket createdSocket = connectionHandler.handleConnectionRequest(host, port);
+        String message = connectionHandler.handleConnectionRequest(host, port);
 
 
         //Verification that the method was correctly called
@@ -66,8 +66,8 @@ public class ClientConnectionHandlerTest {
         verify(mockSession).isValid();
 
         //Verifications of the created socket
-        assertNotNull(createdSocket, "Socket should not be null");
-        assertFalse(createdSocket.isClosed(), "Socket should be connected");
+        assertNotNull(message, "Socket should not be null");
+        assertEquals(message,"success");
 
     }
 
@@ -90,7 +90,7 @@ public class ClientConnectionHandlerTest {
         when(mockSession.isValid()).thenReturn(false);
 
         //Test method call
-        SSLSocket createdSocket = connectionHandler.handleConnectionRequest(host, port);
+        String createdSocket = connectionHandler.handleConnectionRequest(host, port);
 
 
         //Verification that the method was correctly called
@@ -100,7 +100,7 @@ public class ClientConnectionHandlerTest {
 
         //Verifications of the created socket
         assertNotNull(createdSocket, "Socket should not be null");
-        assertFalse(createdSocket.isClosed(), "Socket should be connected");
+        assertEquals(createdSocket, "certificate");
 
     }
 
