@@ -121,4 +121,8 @@ public class AppSettings {
     public static void setOS(String OS) {
         AppSettings.OS = OS;
     }
+
+    public String getOS() {
+        return OS;
+    }
 }

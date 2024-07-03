@@ -5,6 +5,8 @@ import Protocol.ReadapCodesClient;
 import Protocol.ReadapMessageClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatchers;
+import org.mockito.Mockito;
 
 import javax.net.ssl.*;
 import java.io.*;
@@ -26,15 +28,15 @@ public class ClientSessionStatustest {
     public void setUp() throws Exception {
 
         // Mock sessionSocket and its streams
-        mockSocket = mock(SSLSocket.class);
-        mockInputStream = mock(InputStream.class);
-        mockOutputStream = mock(OutputStream.class);
+        mockSocket = Mockito.mock(SSLSocket.class);
+        mockInputStream = Mockito.mock(InputStream.class);
+        mockOutputStream = Mockito.mock(OutputStream.class);
 
         byteArrayOutputStream = new ByteArrayOutputStream();
-        mockOutputStream = spy(byteArrayOutputStream);
+        mockOutputStream = Mockito.spy(byteArrayOutputStream);
 
-        when(mockSocket.getInputStream()).thenReturn(mockInputStream);
-        when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
+        Mockito.when(mockSocket.getInputStream()).thenReturn(mockInputStream);
+        Mockito.when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
 
         session = new ClientSession();
         session.establishSocket(mockSocket);
@@ -46,16 +48,16 @@ public class ClientSessionStatustest {
     @Test
     public void testStatusGathering() throws Exception {
         // Mock ReadapMessageClient
-        ReadapMessageClient mockMessage = mock(ReadapMessageClient.class);
-        when(mockMessage.getCode()).thenReturn(ReadapCodesClient.REMOTECOMMAND);
-        when(mockMessage.getChunk()).thenReturn("Mock response data".getBytes());
+        ReadapMessageClient mockMessage = Mockito.mock(ReadapMessageClient.class);
+        Mockito.when(mockMessage.getCode()).thenReturn(ReadapCodesClient.REMOTECOMMAND);
+        Mockito.when(mockMessage.getChunk()).thenReturn("Mock response data".getBytes());
 
         // Mock behavior of sessionSocket
-        when(mockSocket.getInputStream()).thenReturn(mockInputStream);
-        when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
+        Mockito.when(mockSocket.getInputStream()).thenReturn(mockInputStream);
+        Mockito.when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
 
         // Mock initial REMOTESTART message response
-        when(mockInputStream.read(any(byte[].class))).thenReturn(-1);
+        Mockito.when(mockInputStream.read(ArgumentMatchers.any(byte[].class))).thenReturn(-1);
 
         // Test your method
         ClientSession session = new ClientSession();
@@ -63,8 +65,8 @@ public class ClientSessionStatustest {
         session.statusGathering();
 
         // Assertions based on mock responses
-        verify(mockOutputStream,times(1)).write(any(byte[].class)); // Verify writes
-        verify(mockInputStream,times(2)).read(any());
+        Mockito.verify(mockOutputStream, Mockito.times(1)).write(ArgumentMatchers.any(byte[].class)); // Verify writes
+        Mockito.verify(mockInputStream, Mockito.times(2)).read(ArgumentMatchers.any());
 
     }
 
@@ -76,7 +78,7 @@ public class ClientSessionStatustest {
 
         session.statusGathering();
 
-        verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
+        Mockito.verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
 
 
     }
@@ -129,11 +131,14 @@ class ClientSessionStatusGatheringIntegrationTest {
 
         response = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.STATUSDATA,"success output".getBytes());
         out.write(response.toByteArrayRemainder());
+
+        sslServerSocket.close();
+        Thread.currentThread().interrupt();
     }
 
 
     @Test
-    void integrationTest() throws IOException {
+    void integrationTest() throws IOException, InterruptedException {
 
         Thread setupThread = new Thread(() -> {
             try {
@@ -158,7 +163,7 @@ class ClientSessionStatusGatheringIntegrationTest {
 
         session.statusGathering();
 
-
+        setupThread.join();
 
     }
 

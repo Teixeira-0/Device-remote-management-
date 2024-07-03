@@ -5,6 +5,8 @@ import Protocol.ReadapCodesClient;
 import Protocol.ReadapMessageClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.ArgumentMatchers;
+import org.mockito.Mockito;
 
 import javax.net.ssl.*;
 import java.io.*;
@@ -26,15 +28,15 @@ class ClientSessionRemoteExecutionTest {
     public void setUp() throws Exception {
 
         // Mock sessionSocket and its streams
-        mockSocket = mock(SSLSocket.class);
-        mockInputStream = mock(InputStream.class);
-        mockOutputStream = mock(OutputStream.class);
+        mockSocket = Mockito.mock(SSLSocket.class);
+        mockInputStream = Mockito.mock(InputStream.class);
+        mockOutputStream = Mockito.mock(OutputStream.class);
 
         byteArrayOutputStream = new ByteArrayOutputStream();
-        mockOutputStream = spy(byteArrayOutputStream);
+        mockOutputStream = Mockito.spy(byteArrayOutputStream);
 
-        when(mockSocket.getInputStream()).thenReturn(mockInputStream);
-        when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
+        Mockito.when(mockSocket.getInputStream()).thenReturn(mockInputStream);
+        Mockito.when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
 
         session = new ClientSession();
         session.establishSocket(mockSocket);
@@ -44,16 +46,16 @@ class ClientSessionRemoteExecutionTest {
     public void testRemoteCommandExecution() throws Exception {
 
         // Mock ReadapMessageClient
-        ReadapMessageClient mockMessage = mock(ReadapMessageClient.class);
-        when(mockMessage.getCode()).thenReturn(ReadapCodesClient.REMOTECOMMAND);
-        when(mockMessage.getChunk()).thenReturn("Mock response data".getBytes());
+        ReadapMessageClient mockMessage = Mockito.mock(ReadapMessageClient.class);
+        Mockito.when(mockMessage.getCode()).thenReturn(ReadapCodesClient.REMOTECOMMAND);
+        Mockito.when(mockMessage.getChunk()).thenReturn("Mock response data".getBytes());
 
         // Mock behavior of sessionSocket
-        when(mockSocket.getInputStream()).thenReturn(mockInputStream);
-        when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
+        Mockito.when(mockSocket.getInputStream()).thenReturn(mockInputStream);
+        Mockito.when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
 
         // Mock initial REMOTESTART message response
-        when(mockInputStream.read(any(byte[].class))).thenReturn(-1);
+        Mockito.when(mockInputStream.read(ArgumentMatchers.any(byte[].class))).thenReturn(-1);
 
         // Test
         ClientSession remoteShell = new ClientSession();
@@ -63,8 +65,8 @@ class ClientSessionRemoteExecutionTest {
 
 
         // Assertions based on mock responses
-        verify(mockOutputStream,times(4)).write(any(byte[].class)); // Verify writes
-        verify(mockInputStream,times(2)).read(any());
+        Mockito.verify(mockOutputStream, Mockito.times(4)).write(ArgumentMatchers.any(byte[].class)); // Verify writes
+        Mockito.verify(mockInputStream, Mockito.times(2)).read(ArgumentMatchers.any());
 
     }
 
@@ -76,16 +78,16 @@ class ClientSessionRemoteExecutionTest {
         session.setCommand("test");
         session.initializeRemoteShell();
 
-        verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
+        Mockito.verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
 
         expectedMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND, ("test" + " ;echo ;echo 123098123214123").getBytes());
-        verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
+        Mockito.verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
 
         expectedMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTEACK, new byte[0]);
-        verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
+        Mockito.verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
 
         expectedMessage = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTEEXIT,new byte[0]);
-        verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
+        Mockito.verify(mockOutputStream).write(expectedMessage.toByteArrayRemainder());
     }
 
 
@@ -93,16 +95,16 @@ class ClientSessionRemoteExecutionTest {
     public void testBlankRemoteCommandExecution() throws Exception {
 
         // Mock ReadapMessageClient
-        ReadapMessageClient mockMessage = mock(ReadapMessageClient.class);
-        when(mockMessage.getCode()).thenReturn(ReadapCodesClient.REMOTECOMMAND);
-        when(mockMessage.getChunk()).thenReturn("Mock response data".getBytes());
+        ReadapMessageClient mockMessage = Mockito.mock(ReadapMessageClient.class);
+        Mockito.when(mockMessage.getCode()).thenReturn(ReadapCodesClient.REMOTECOMMAND);
+        Mockito.when(mockMessage.getChunk()).thenReturn("Mock response data".getBytes());
 
         // Mock behavior of sessionSocket
-        when(mockSocket.getInputStream()).thenReturn(mockInputStream);
-        when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
+        Mockito.when(mockSocket.getInputStream()).thenReturn(mockInputStream);
+        Mockito.when(mockSocket.getOutputStream()).thenReturn(mockOutputStream);
 
         // Mock initial REMOTESTART message response
-        when(mockInputStream.read(any(byte[].class))).thenReturn(-1);
+        Mockito.when(mockInputStream.read(ArgumentMatchers.any(byte[].class))).thenReturn(-1);
 
         // Test your method
         ClientSession remoteShell = new ClientSession();
@@ -112,8 +114,8 @@ class ClientSessionRemoteExecutionTest {
 
 
         // Assertions based on mock responses
-        verify(mockOutputStream, times(3)).write(any(byte[].class)); // Verify writes
-        verify(mockInputStream, times(2)).read(any());
+        Mockito.verify(mockOutputStream, Mockito.times(3)).write(ArgumentMatchers.any(byte[].class)); // Verify writes
+        Mockito.verify(mockInputStream, Mockito.times(2)).read(ArgumentMatchers.any());
 
     }
 
@@ -168,11 +170,14 @@ class ClientSessionRemoteExecutionIntegrationTest {
 
         response = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMANDEND,"success output".getBytes());
         out.write(response.toByteArrayRemainder());
+
+        sslServerSocket.close();
+        Thread.currentThread().interrupt();
     }
 
     //Expects success output printed
     @Test
-    void integrationTest() throws IOException {
+    void integrationTest() throws IOException, InterruptedException {
 
         Thread setupThread = new Thread(() -> {
             try {
@@ -197,7 +202,7 @@ class ClientSessionRemoteExecutionIntegrationTest {
 
         session.initializeRemoteShell();
 
-
+        setupThread.join();
 
     }
 }

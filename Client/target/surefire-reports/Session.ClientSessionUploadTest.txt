@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: Session.ClientSessionUploadTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.028 s <<< FAILURE! -- in Session.ClientSessionUploadTest
+Session.ClientSessionUploadTest.testuploadErrorExecution -- Time elapsed: 0.018 s <<< FAILURE!
+Wanted but not invoked:
+inputStream.read(<any>);
+-> at java.base/java.io.InputStream.read(InputStream.java:218)
+Actually, there were zero interactions with this mock.
+
+	at java.base/java.io.InputStream.read(InputStream.java:218)
+	at Session.ClientSessionUploadTest.testuploadErrorExecution(ClientSessionUploadTest.java:66)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:577)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+

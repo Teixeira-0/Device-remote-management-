@@ -4,7 +4,43 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="" />
+    <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionDownloadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionRemoteExecutionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionRemoteExecutionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionStatustest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionStatustest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionUploadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionUploadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Connection.ClientConnectionHandlerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/Connection.ClientConnectionHandlerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Controllers.StatusControllerTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/Controllers.StatusControllerTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Protocol.ReadapMessageClientTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/Protocol.ReadapMessageClientTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Settings.ClientAppSettingsTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/Settings.ClientAppSettingsTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Settings.ClientApplicationTest.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/Settings.ClientApplicationTest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Connection.ClientConnectionHandlerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Connection.ClientConnectionHandlerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Controllers.StatusControllerTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Controllers.StatusControllerTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Protocol.ReadapMessageClientTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Protocol.ReadapMessageClientTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Settings.ClientAppSettingsTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Settings.ClientAppSettingsTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Settings.ClientApplicationTest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Settings.ClientApplicationTest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessioUploadIntegrationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionDownloadIntegrationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionDownloadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionDownloadTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionRemoteExecutionIntegrationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionRemoteExecutionTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionRemoteExecutionTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionStatusGatheringIntegrationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionStatustest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionStatustest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionUploadTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionUploadTest.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,39 +74,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "2-i-want-to-establish-a-connection-with-an-agent-device",
-    "jdk.selected.JAVA_MODULE": "openjdk-18",
-    "last_directory_selection": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java",
-    "last_opened_file_path": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java/certificates",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;2-i-want-to-establish-a-connection-with-an-agent-device&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
+    &quot;last_directory_selection&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java/certificates&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/Client/src/test/java/certificates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Client/src/test/java" />
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main" />
       <recent name="$PROJECT_DIR$/Docs" />
@@ -99,9 +136,9 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClientSessioUploadIntegrationTest.integrationTest">
-    <configuration name="ClientSessioUploadIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
+  <component name="RunManager" selected="JUnit.UploadTest.integrationTest">
+    <configuration name="DownloadTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Agent" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Session.*" />
@@ -109,15 +146,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessioUploadIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="Session.DownloadTest" />
       <option name="METHOD_NAME" value="integrationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionDownloadIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
+    <configuration name="RemoteExecutiontest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Agent" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Session.*" />
@@ -125,15 +162,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionDownloadIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="Session.RemoteExecutiontest" />
       <option name="METHOD_NAME" value="integrationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionDownloadTest.testDownload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
+    <configuration name="RemoteExecutiontest.testRemoteCommandExecution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Agent" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Session.*" />
@@ -141,15 +178,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionDownloadTest" />
-      <option name="METHOD_NAME" value="testDownload" />
+      <option name="MAIN_CLASS_NAME" value="Session.RemoteExecutiontest" />
+      <option name="METHOD_NAME" value="testRemoteCommandExecution" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionUploadTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
+    <configuration name="StatusTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Agent" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Session.*" />
@@ -157,14 +194,15 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionUploadTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="Session.StatusTest" />
+      <option name="METHOD_NAME" value="integrationTest" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionUploadTest.testuploadExecution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
+    <configuration name="UploadTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Agent" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="Session.*" />
@@ -172,8 +210,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionUploadTest" />
-      <option name="METHOD_NAME" value="testuploadExecution" />
+      <option name="MAIN_CLASS_NAME" value="Session.UploadTest" />
+      <option name="METHOD_NAME" value="integrationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -193,35 +231,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Client" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="Intializer.Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Intializer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
-      <item itemvalue="JUnit.ClientSessioUploadIntegrationTest.integrationTest" />
-      <item itemvalue="JUnit.ClientSessionDownloadIntegrationTest.integrationTest" />
-      <item itemvalue="JUnit.ClientSessionDownloadTest.testDownload" />
-      <item itemvalue="JUnit.ClientSessionUploadTest" />
-      <item itemvalue="JUnit.ClientSessionUploadTest.testuploadExecution" />
+      <item itemvalue="JUnit.DownloadTest.integrationTest" />
+      <item itemvalue="JUnit.RemoteExecutiontest.integrationTest" />
+      <item itemvalue="JUnit.RemoteExecutiontest.testRemoteCommandExecution" />
+      <item itemvalue="JUnit.StatusTest.integrationTest" />
+      <item itemvalue="JUnit.UploadTest.integrationTest" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClientSessioUploadIntegrationTest.integrationTest" />
-        <item itemvalue="JUnit.ClientSessionUploadTest.testuploadExecution" />
-        <item itemvalue="JUnit.ClientSessionUploadTest" />
-        <item itemvalue="JUnit.ClientSessionDownloadIntegrationTest.integrationTest" />
-        <item itemvalue="JUnit.ClientSessionDownloadTest.testDownload" />
+        <item itemvalue="JUnit.UploadTest.integrationTest" />
+        <item itemvalue="JUnit.DownloadTest.integrationTest" />
+        <item itemvalue="JUnit.StatusTest.integrationTest" />
+        <item itemvalue="JUnit.RemoteExecutiontest.integrationTest" />
+        <item itemvalue="JUnit.RemoteExecutiontest.testRemoteCommandExecution" />
       </list>
     </recent_temporary>
   </component>
@@ -251,6 +276,7 @@
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
       <workItem from="1719586648001" duration="69556000" />
+      <workItem from="1720020569843" duration="4796000" />
     </task>
     <servers />
   </component>
@@ -281,9 +307,9 @@
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
-          <line>172</line>
-          <option name="timeStamp" value="91" />
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="101" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
