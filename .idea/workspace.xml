@@ -6,9 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionRemoteExecutionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Protocol/ReadapMessageClient.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,8 +102,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClientSessionStatusGatheringIntegrationTest.integrationTest">
-    <configuration name="ClientSessionRemoteExecutionIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClientSessionDownloadIntegrationTest.integrationTest">
+    <configuration name="ClientSessionDownloadIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -114,8 +112,24 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionRemoteExecutionIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionDownloadIntegrationTest" />
       <option name="METHOD_NAME" value="integrationTest" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientSessionDownloadTest.testDownload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Session.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Session" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionDownloadTest" />
+      <option name="METHOD_NAME" value="testDownload" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -168,22 +182,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionStatustest.testStatusGathering" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Session.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionStatustest" />
-      <option name="METHOD_NAME" value="testStatusGathering" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Agent" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" singleton="false" nameIsGenerated="true">
       <module name="Agent" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="Initializer.Agent" />
@@ -212,21 +210,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ClientSessionRemoteExecutionIntegrationTest.integrationTest" />
+      <item itemvalue="JUnit.ClientSessionDownloadIntegrationTest.integrationTest" />
+      <item itemvalue="JUnit.ClientSessionDownloadTest.testDownload" />
       <item itemvalue="JUnit.ClientSessionRemoteExecutionTest" />
       <item itemvalue="JUnit.ClientSessionStatusGatheringIntegrationTest.integrationTest" />
       <item itemvalue="JUnit.ClientSessionStatustest.testMessageGeneration" />
-      <item itemvalue="JUnit.ClientSessionStatustest.testStatusGathering" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClientSessionDownloadIntegrationTest.integrationTest" />
+        <item itemvalue="JUnit.ClientSessionDownloadTest.testDownload" />
         <item itemvalue="JUnit.ClientSessionStatusGatheringIntegrationTest.integrationTest" />
         <item itemvalue="JUnit.ClientSessionStatustest.testMessageGeneration" />
         <item itemvalue="JUnit.ClientSessionRemoteExecutionTest" />
-        <item itemvalue="JUnit.ClientSessionStatustest.testStatusGathering" />
-        <item itemvalue="JUnit.ClientSessionRemoteExecutionIntegrationTest.integrationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -255,7 +253,7 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
-      <workItem from="1719586648001" duration="66380000" />
+      <workItem from="1719586648001" duration="68756000" />
     </task>
     <servers />
   </component>
@@ -289,6 +287,11 @@
           <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
           <line>172</line>
           <option name="timeStamp" value="91" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
