@@ -8,7 +8,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 import org.mockito.MockedStatic;
-
 import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,10 +25,8 @@ import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 import static org.mockito.Mockito.verify;
 
-
 @SpringBootTest(classes = Client.class,webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-class DataTransferControllerTest {
-
+class RemoteExecutionControllerTest {
 
     @Autowired
     private TestRestTemplate restTemplate;
@@ -40,10 +37,8 @@ class DataTransferControllerTest {
     @Mock
     private SSLSocketFactory mockSSLSocketFactory;
 
-
     private ClientConnectionHandler connectionHandler;
 
-    private ClientSession session;
 
     @BeforeEach
     public void setUp() throws IOException {
@@ -81,27 +76,27 @@ class DataTransferControllerTest {
         verify(mockSSLSocket).getSession();
         verify(mockSession).isValid();
 
-        session = ClientConnectionHandler.searchSessionById(1);
+        ClientSession session = ClientConnectionHandler.searchSessionById(1);
 
         assertNotNull(session, "The Session must be found on the hashmap");
     }
 
-
     @Test
-    void testCorrectUpload() {
+    void testRemoteExecution(){
         ClientSession mockSession;
 
         try (MockedStatic<ClientConnectionHandler> mockedStatic = mockStatic(ClientConnectionHandler.class)) {
-
 
             mockSession = mock(ClientSession.class);
 
 
             mockedStatic.when(() -> ClientConnectionHandler.searchSessionById(1)).thenReturn(mockSession);
 
+            // Mock statusGathering method
+            Mockito.doNothing().when(mockSession).initializeRemoteShell();
 
             // Send HTTP GET request to /status/cpu?sessionid=1
-            ResponseEntity<Void> response = restTemplate.getForEntity("/data/upload?path=../Client&sessionid=1", Void.class);
+            ResponseEntity<Void> response = restTemplate.getForEntity("/remote/executesingle?command=ls&sessionid=1", Void.class);
 
 
             assertEquals(HttpStatus.OK, response.getStatusCode());
@@ -109,25 +104,25 @@ class DataTransferControllerTest {
     }
 
     @Test
-    void testincorrectUpload() {
+    void testMultipleRemoteExecution(){
         ClientSession mockSession;
 
         try (MockedStatic<ClientConnectionHandler> mockedStatic = mockStatic(ClientConnectionHandler.class)) {
-
 
             mockSession = mock(ClientSession.class);
 
 
             mockedStatic.when(() -> ClientConnectionHandler.searchSessionById(1)).thenReturn(mockSession);
 
+            // Mock statusGathering method
+            Mockito.doNothing().when(mockSession).initializeRemoteShell();
 
             // Send HTTP GET request to /status/cpu?sessionid=1
-            ResponseEntity<Void> response = restTemplate.getForEntity("/data/upload?path=LOL.exe&sessionid=1", Void.class);
+            ResponseEntity<Void> response = restTemplate.getForEntity("/remote/executemultiple?command=ls&sessionid=1", Void.class);
 
 
-            assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+            assertEquals(HttpStatus.OK, response.getStatusCode());
         }
     }
 
-    //Download unit tests
 }

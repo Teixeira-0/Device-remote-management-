@@ -5,14 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Authentication/ClientTLSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Authentication/ClientTLSProvider.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/ConnectionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Controllers/ConnectionControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/StatusControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Controllers/StatusControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/DataTransferControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Controllers/DataTransferControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Authentication/ClientTLSProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Authentication/ClientTLSProvider.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Controllers/ConnectionControllerTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/test-classes/Controllers/ConnectionControllerTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,35 +48,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;2-i-want-to-establish-a-connection-with-an-agent-device&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-18&quot;,
-    &quot;last_directory_selection&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "2-i-want-to-establish-a-connection-with-an-agent-device",
+    "jdk.selected.JAVA_MODULE": "openjdk-18",
+    "last_directory_selection": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java",
+    "last_opened_file_path": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java/certificates",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Client/src/test/java/certificates" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java" />
       <recent name="$PROJECT_DIR$/src/main" />
@@ -91,6 +95,7 @@
       <recent name="Intializer" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="Session" />
       <recent name="Controllers" />
       <recent name="Settings" />
       <recent name="Connection" />
@@ -104,80 +109,81 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DataTransferControllerTest">
-    <configuration name="ConnectionControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClientSessionIntegrationTest.integrationTest">
+    <configuration name="ClientSessionIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controllers.*" />
+          <option name="PATTERN" value="Session.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.ConnectionControllerTest" />
+      <option name="PACKAGE_NAME" value="Session" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionIntegrationTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataTransferControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientSessionIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controllers.*" />
+          <option name="PATTERN" value="Session.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.DataTransferControllerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DataTransferControllerTest.testCorrectUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Controllers.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.DataTransferControllerTest" />
-      <option name="METHOD_NAME" value="testCorrectUpload" />
+      <option name="PACKAGE_NAME" value="Session" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionIntegrationTest" />
+      <option name="METHOD_NAME" value="integrationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DataTransferControllerTest.testincorrectUpload" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientSessionTest.testBlankRemoteCommandExecution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controllers.*" />
+          <option name="PATTERN" value="Session.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.DataTransferControllerTest" />
-      <option name="METHOD_NAME" value="testincorrectUpload" />
+      <option name="PACKAGE_NAME" value="Session" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionTest" />
+      <option name="METHOD_NAME" value="testBlankRemoteCommandExecution" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StatusControllerTest.testDownloadData_Success" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientSessionTest.testInitialMessageGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="Controllers.*" />
+          <option name="PATTERN" value="Session.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="Controllers" />
-      <option name="MAIN_CLASS_NAME" value="Controllers.StatusControllerTest" />
-      <option name="METHOD_NAME" value="testDownloadData_Success" />
+      <option name="PACKAGE_NAME" value="Session" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionTest" />
+      <option name="METHOD_NAME" value="testInitialMessageGeneration" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientSessionTest.testRemoteCommandExecution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Session.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Session" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionTest" />
+      <option name="METHOD_NAME" value="testRemoteCommandExecution" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,21 +217,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ConnectionControllerTest" />
-      <item itemvalue="JUnit.DataTransferControllerTest" />
-      <item itemvalue="JUnit.DataTransferControllerTest.testCorrectUpload" />
-      <item itemvalue="JUnit.DataTransferControllerTest.testincorrectUpload" />
-      <item itemvalue="JUnit.StatusControllerTest.testDownloadData_Success" />
+      <item itemvalue="JUnit.ClientSessionIntegrationTest" />
+      <item itemvalue="JUnit.ClientSessionIntegrationTest.integrationTest" />
+      <item itemvalue="JUnit.ClientSessionTest.testBlankRemoteCommandExecution" />
+      <item itemvalue="JUnit.ClientSessionTest.testInitialMessageGeneration" />
+      <item itemvalue="JUnit.ClientSessionTest.testRemoteCommandExecution" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DataTransferControllerTest" />
-        <item itemvalue="JUnit.DataTransferControllerTest.testincorrectUpload" />
-        <item itemvalue="JUnit.DataTransferControllerTest.testCorrectUpload" />
-        <item itemvalue="JUnit.StatusControllerTest.testDownloadData_Success" />
-        <item itemvalue="JUnit.ConnectionControllerTest" />
+        <item itemvalue="JUnit.ClientSessionIntegrationTest.integrationTest" />
+        <item itemvalue="JUnit.ClientSessionIntegrationTest" />
+        <item itemvalue="JUnit.ClientSessionTest.testBlankRemoteCommandExecution" />
+        <item itemvalue="JUnit.ClientSessionTest.testInitialMessageGeneration" />
+        <item itemvalue="JUnit.ClientSessionTest.testRemoteCommandExecution" />
       </list>
     </recent_temporary>
   </component>
@@ -254,7 +260,7 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
-      <workItem from="1719586648001" duration="53632000" />
+      <workItem from="1719586648001" duration="65608000" />
     </task>
     <servers />
   </component>
@@ -280,9 +286,14 @@
           <option name="timeStamp" value="46" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java</url>
+          <line>27</line>
+          <option name="timeStamp" value="78" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
-          <line>346</line>
-          <option name="timeStamp" value="72" />
+          <line>213</line>
+          <option name="timeStamp" value="83" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -118,7 +118,7 @@ public class ClientSession {
         }
     }
 
-    public void downloadData(String path) throws IOException {
+    public String downloadData(String path) throws IOException {
 
         InputStream in = sessionSocket.getInputStream();
         OutputStream out = sessionSocket.getOutputStream();
@@ -137,7 +137,7 @@ public class ClientSession {
         long fileLength = ByteBuffer.wrap(response.getChunk()).getLong();
 
         if(response.getCode() != ReadapCodesClient.DOWNLOADACK){
-            //END CONNECTION
+            return "error";
         }
 
         String [] savePath = path.split("/");
@@ -161,6 +161,8 @@ public class ClientSession {
         }
 
         bufferedOutputStream.flush();
+
+        return "success";
     }
 
 
