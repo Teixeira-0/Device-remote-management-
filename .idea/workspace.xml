@@ -5,15 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Authentication/ClientTLSProvider.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Authentication/ClientTLSProvider.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/DataTransferControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Controllers/DataTransferControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Authentication/ClientTLSProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Authentication/ClientTLSProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/DataTransferController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionRemoteExecutionTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionIntegrationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +19,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -109,8 +104,8 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.ClientSessionIntegrationTest.integrationTest">
-    <configuration name="ClientSessionIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ClientSessionStatusGatheringIntegrationTest.integrationTest">
+    <configuration name="ClientSessionRemoteExecutionIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -119,29 +114,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionIntegrationTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ClientSessionIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Session.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionIntegrationTest" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionRemoteExecutionIntegrationTest" />
       <option name="METHOD_NAME" value="integrationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionTest.testBlankRemoteCommandExecution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientSessionRemoteExecutionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -150,14 +130,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionTest" />
-      <option name="METHOD_NAME" value="testBlankRemoteCommandExecution" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionRemoteExecutionTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientSessionStatusGatheringIntegrationTest.integrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Session.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Session" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionStatusGatheringIntegrationTest" />
+      <option name="METHOD_NAME" value="integrationTest" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionTest.testInitialMessageGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientSessionStatustest.testMessageGeneration" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -166,14 +161,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionTest" />
-      <option name="METHOD_NAME" value="testInitialMessageGeneration" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionStatustest" />
+      <option name="METHOD_NAME" value="testMessageGeneration" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClientSessionTest.testRemoteCommandExecution" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClientSessionStatustest.testStatusGathering" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Client" />
       <extension name="coverage">
         <pattern>
@@ -182,8 +177,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="Session" />
-      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionTest" />
-      <option name="METHOD_NAME" value="testRemoteCommandExecution" />
+      <option name="MAIN_CLASS_NAME" value="Session.ClientSessionStatustest" />
+      <option name="METHOD_NAME" value="testStatusGathering" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -217,21 +212,21 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="JUnit.ClientSessionIntegrationTest" />
-      <item itemvalue="JUnit.ClientSessionIntegrationTest.integrationTest" />
-      <item itemvalue="JUnit.ClientSessionTest.testBlankRemoteCommandExecution" />
-      <item itemvalue="JUnit.ClientSessionTest.testInitialMessageGeneration" />
-      <item itemvalue="JUnit.ClientSessionTest.testRemoteCommandExecution" />
+      <item itemvalue="JUnit.ClientSessionRemoteExecutionIntegrationTest.integrationTest" />
+      <item itemvalue="JUnit.ClientSessionRemoteExecutionTest" />
+      <item itemvalue="JUnit.ClientSessionStatusGatheringIntegrationTest.integrationTest" />
+      <item itemvalue="JUnit.ClientSessionStatustest.testMessageGeneration" />
+      <item itemvalue="JUnit.ClientSessionStatustest.testStatusGathering" />
       <item itemvalue="Spring Boot.Client (1)" />
       <item itemvalue="Spring Boot.Agent" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ClientSessionIntegrationTest.integrationTest" />
-        <item itemvalue="JUnit.ClientSessionIntegrationTest" />
-        <item itemvalue="JUnit.ClientSessionTest.testBlankRemoteCommandExecution" />
-        <item itemvalue="JUnit.ClientSessionTest.testInitialMessageGeneration" />
-        <item itemvalue="JUnit.ClientSessionTest.testRemoteCommandExecution" />
+        <item itemvalue="JUnit.ClientSessionStatusGatheringIntegrationTest.integrationTest" />
+        <item itemvalue="JUnit.ClientSessionStatustest.testMessageGeneration" />
+        <item itemvalue="JUnit.ClientSessionRemoteExecutionTest" />
+        <item itemvalue="JUnit.ClientSessionStatustest.testStatusGathering" />
+        <item itemvalue="JUnit.ClientSessionRemoteExecutionIntegrationTest.integrationTest" />
       </list>
     </recent_temporary>
   </component>
@@ -260,7 +255,7 @@
       <workItem from="1719311025423" duration="19648000" />
       <workItem from="1719415897109" duration="913000" />
       <workItem from="1719499732053" duration="9936000" />
-      <workItem from="1719586648001" duration="65608000" />
+      <workItem from="1719586648001" duration="66380000" />
     </task>
     <servers />
   </component>
@@ -292,8 +287,8 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
-          <line>213</line>
-          <option name="timeStamp" value="83" />
+          <line>172</line>
+          <option name="timeStamp" value="91" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
