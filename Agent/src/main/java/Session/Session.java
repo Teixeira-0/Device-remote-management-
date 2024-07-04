@@ -210,11 +210,21 @@ public class Session implements Runnable {
 
         //Initialize local variables
 
+        String command;
+
         String cmd;
         if (Objects.equals(Application.settings().getOS(), "win")) {
             cmd = "powershell.exe" ;
+            command = """
+                    $cpuInfo = Get-CimInstance -ClassName Win32_Processor$cpuInfo | ForEach-Object {
+                        Write-Output "Name: $($_.Name)"
+                        Write-Output "Load Percentage: $($_.LoadPercentage)%"
+                        Write-Output "Number of Cores: $($_.NumberOfCores)"
+                        Write-Output "Number of Logical Processors: $($_.NumberOfLogicalProcessors)"
+                    }"  ;echo \"\";echo 123098123214123""";
         } else {
             cmd = "/bin/sh";
+            command = "top -l 1 | grep \"CPU usage\"" + " ;echo \"\";echo 123098123214123";
         }
 
         Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start();
@@ -228,7 +238,7 @@ public class Session implements Runnable {
 
 
         //Send command to the ps buffer
-        writer.write("top -l 1 | grep \"CPU usage\"" + " ;echo ;echo 123098123214123");
+        writer.write(command);
         writer.newLine();
         writer.flush();
 

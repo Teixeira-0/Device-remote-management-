@@ -5,18 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/agent.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Settings/AppSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Settings/AppSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ClientFolderPath/Settings/ClientAppSettingsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Settings/ClientAppSettingsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +246,7 @@
       <workItem from="1719499732053" duration="9936000" />
       <workItem from="1719586648001" duration="69556000" />
       <workItem from="1720020569843" duration="11319000" />
-      <workItem from="1720133901153" duration="610000" />
+      <workItem from="1720133901153" duration="924000" />
     </task>
     <servers />
   </component>
@@ -295,11 +285,6 @@
           <url>file://$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java</url>
           <line>29</line>
           <option name="timeStamp" value="106" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
-          <line>279</line>
-          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
