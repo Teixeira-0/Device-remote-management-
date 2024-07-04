@@ -12,7 +12,7 @@ public class ClientAppSettings {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(ClientAppSettings.class);
 
-    private static final String PROPERTIES_RESOURCE = "application.properties";
+    private static final String PROPERTIES_RESOURCE = "client.properties";
     private static final String CONNECTION_PORT = "ConnectionPort";
     private static final String KEYSTORE_PATH = "KeystorePath";
     private static final String KEYSTORE_TYPE = "KeystoreType";

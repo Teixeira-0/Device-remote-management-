@@ -27,7 +27,7 @@ class ClientAppSettingsTest {
             clientAppSettings = new ClientAppSettings() {
                 @Override
                 protected InputStream getResourceAsStream(String resourceName) {
-                    if ("application.properties".equals(resourceName)) {
+                    if ("client.properties".equals(resourceName)) {
                         return null;  // Simulate file not found
                     }
                     return super.getResourceAsStream(resourceName);
@@ -63,7 +63,7 @@ class ClientAppSettingsTest {
         clientAppSettings = new ClientAppSettings() {
             @Override
             protected InputStream getResourceAsStream(String resourceName) {
-                if ("application.properties".equals(resourceName)) {
+                if ("client.properties".equals(resourceName)) {
                     return inputStream;  // Provide custom properties
                 }
                 return super.getResourceAsStream(resourceName);

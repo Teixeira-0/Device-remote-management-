@@ -4,7 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -12,7 +11,7 @@ import java.util.Properties;
 public class AppSettings {
     private static final Logger LOGGER = LoggerFactory.getLogger(AppSettings.class);
 
-    private static final String PROPERTIES_RESOURCE = "application.properties";
+    private static final String PROPERTIES_RESOURCE = "agent.properties";
     private static final String CONNECTION_PORT = "ConnectionPort";
     private static final String SESSION_POOL_SIZE = "SessionPoolSize";
     private static final String KEYSTORE_PATH = "KeystorePath";

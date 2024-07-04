@@ -6,91 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/test/java/Session/DownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/DownloadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/test/java/Session/RemoteExecutiontest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/RemoteExecutiontest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/test/java/Session/StatusTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/StatusTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/src/test/java/Session/UploadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/Session/UploadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/Agent-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/Agent-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/Agent-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/Agent-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/agent.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Settings/AppSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Settings/AppSettings.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/test-classes/Session/DownloadTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/test-classes/Session/RemoteExecutiontest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/test-classes/Session/StatusTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/test-classes/Session/UploadTest.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Connection/ClientConnectionHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Connection/ClientConnectionHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/ConnectionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Controllers/ConnectionControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/DataTransferControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Controllers/DataTransferControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/RemoteExecutionControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Controllers/RemoteExecutionControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Controllers/StatusControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Controllers/StatusControllerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Protocol/ReadapMessageClientTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Protocol/ReadapMessageClientTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionDownloadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Session/ClientSessionDownloadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionRemoteExecutionTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Session/ClientSessionRemoteExecutionTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionStatustest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Session/ClientSessionStatustest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Session/ClientSessionUploadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Session/ClientSessionUploadTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Settings/ClientAppSettingsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Settings/ClientAppSettingsTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/Settings/ClientApplicationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Settings/ClientApplicationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/certificates/server-keystore.jks" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/certificates/server-keystore.jks" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/src/test/java/certificates/server-truststore.p12" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/certificates/server-truststore.p12" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar.original" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/Client-1.0-SNAPSHOT.jar.original" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Settings/ClientAppSettings.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Client/target/classes/application.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Connection.ClientConnectionHandlerTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Controllers.ConnectionControllerTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Controllers.DataTransferControllerTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Controllers.RemoteExecutionControllerTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Controllers.StatusControllerTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Protocol.ReadapMessageClientTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Session.ClientSessioUploadIntegrationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Session.ClientSessionDownloadIntegrationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Session.ClientSessionDownloadTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Session.ClientSessionRemoteExecutionIntegrationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Session.ClientSessionRemoteExecutionTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Session.ClientSessionStatusGatheringIntegrationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Session.ClientSessionUploadTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Settings.ClientAppSettingsTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/Settings.ClientApplicationTest.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Connection.ClientConnectionHandlerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Controllers.ConnectionControllerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Controllers.DataTransferControllerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Controllers.RemoteExecutionControllerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Controllers.StatusControllerTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Protocol.ReadapMessageClientTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Session.ClientSessioUploadIntegrationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Session.ClientSessionDownloadIntegrationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Session.ClientSessionDownloadTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Session.ClientSessionRemoteExecutionIntegrationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Session.ClientSessionRemoteExecutionTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Session.ClientSessionStatusGatheringIntegrationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Session.ClientSessionUploadTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Settings.ClientAppSettingsTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/surefire-reports/TEST-Settings.ClientApplicationTest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Connection/ClientConnectionHandlerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Controllers/ConnectionControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Controllers/DataTransferControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Controllers/RemoteExecutionControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Controllers/StatusControllerTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Protocol/ReadapMessageClientTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessioUploadIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionDownloadIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionDownloadTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionRemoteExecutionIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionRemoteExecutionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionStatusGatheringIntegrationTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionStatustest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Session/ClientSessionUploadTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Settings/ClientAppSettingsTest$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Settings/ClientAppSettingsTest$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Settings/ClientAppSettingsTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/test-classes/Settings/ClientApplicationTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ClientFolderPath/Settings/ClientAppSettingsTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/ClientFolderPath/Settings/ClientAppSettingsTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +66,7 @@
     "git-widget-placeholder": "2-i-want-to-establish-a-connection-with-an-agent-device",
     "jdk.selected.JAVA_MODULE": "openjdk-18",
     "last_directory_selection": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java",
-    "last_opened_file_path": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Client/src/test/java/certificates",
+    "last_opened_file_path": "/Users/felix/Documents/3 Ano/PESTI/Device-remote-management-/Agent/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -155,14 +81,15 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/Agent/src/main/resources" />
       <recent name="$PROJECT_DIR$/Client/src/test/java/certificates" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/Client/src/test/java" />
       <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/Agent/src/main/resources" />
+      <recent name="$PROJECT_DIR$/Client/src/main/resources" />
+      <recent name="$PROJECT_DIR$/Client/src/test/java" />
       <recent name="$PROJECT_DIR$/src/main/java" />
-      <recent name="$PROJECT_DIR$/src/main" />
-      <recent name="$PROJECT_DIR$/Docs" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
@@ -329,6 +256,7 @@
       <workItem from="1719499732053" duration="9936000" />
       <workItem from="1719586648001" duration="69556000" />
       <workItem from="1720020569843" duration="11319000" />
+      <workItem from="1720133901153" duration="610000" />
     </task>
     <servers />
   </component>
@@ -365,13 +293,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java</url>
-          <line>30</line>
+          <line>29</line>
           <option name="timeStamp" value="106" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Client/src/main/java/Settings/ClientAppSettings.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="107" />
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
+          <line>279</line>
+          <option name="timeStamp" value="108" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

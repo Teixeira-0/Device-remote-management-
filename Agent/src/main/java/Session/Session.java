@@ -257,11 +257,14 @@ public class Session implements Runnable {
         ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTEACK, new byte[0]);
         out.write(response.toByteArrayRemainder());
 
+        //variable to ignore invalid output of windows
+        boolean skip = false;
 
         //Initialize local variables
         String cmd;
         if (Objects.equals(Application.settings().getOS(), "win")) {
             cmd = "powershell.exe" ;
+            skip = true;
         } else {
             cmd = "/bin/sh";
         }
@@ -300,6 +303,11 @@ public class Session implements Runnable {
             StringBuilder s = new StringBuilder();
             String line;
             try{
+                if(skip){
+                    for (int i = 0; i < 7; i++) {
+                        reader.readLine();
+                    }
+                }
                 while(!Objects.equals(line = reader.readLine(), "123098123214123")){
                     if(line != null) {
 

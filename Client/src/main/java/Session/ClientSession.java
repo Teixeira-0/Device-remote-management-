@@ -323,7 +323,7 @@ public class ClientSession {
                         //Thread.sleep(50);
                     }
 
-                    message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, new byte[0]);
+                    message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTEACK, new byte[0]);
                     out.write(message.toByteArrayRemainder());
 
                 } while (response.getCode() == ReadapCodesClient.REMOTECOMMANDMESSAGE);
