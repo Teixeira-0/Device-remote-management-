@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" beforeDir="false" afterPath="$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +247,7 @@
       <workItem from="1719499732053" duration="9936000" />
       <workItem from="1719586648001" duration="69556000" />
       <workItem from="1720020569843" duration="11319000" />
-      <workItem from="1720133901153" duration="924000" />
+      <workItem from="1720133901153" duration="3253000" />
     </task>
     <servers />
   </component>
@@ -271,20 +272,29 @@
           <properties class="java.lang.IllegalThreadStateException" package="java.lang" />
           <option name="timeStamp" value="46" />
         </breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.nio.BufferUnderflowException" package="java.nio" />
+          <option name="timeStamp" value="109" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/Controllers/DataTransferController.java</url>
           <line>27</line>
           <option name="timeStamp" value="78" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="101" />
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/main/java/Settings/AppSettings.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="106" />
+          <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
+          <line>108</line>
+          <option name="timeStamp" value="113" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="114" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

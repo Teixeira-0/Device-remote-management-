@@ -59,7 +59,14 @@ public class ClientSession {
 
         byte[] chunk = new byte[payloadMaximumSize];
         ReadapMessageClient receivedMessage;
-        byte[] fileBytes ;
+        byte[] fileBytes;
+
+            in.read(chunk);
+            receivedMessage = ReadapMessageClient.fromByteArrayRemainder(chunk);
+
+            if(receivedMessage.getCode() != ReadapCodesClient.UPLOADACK){
+                //END
+            }
 
 
         File file = new File(path);
@@ -86,6 +93,13 @@ public class ClientSession {
                     out.write(outputMessage.toByteArrayRemainder());
                     out.flush();
 
+                    in.read(chunk);
+                    receivedMessage = ReadapMessageClient.fromByteArrayRemainder(chunk);
+
+                    if(receivedMessage.getCode() != ReadapCodesClient.UPLOADACK){
+                        break;
+                    }
+
                 }else {
                     fileBytes = new byte[payloadMaximumSize];
                     bufferedInputStream.read(fileBytes, (int) 0, payloadMaximumSize);
@@ -105,6 +119,7 @@ public class ClientSession {
 
                 i = i + payloadMaximumSize;
             }
+
 
             restoreThread();
             Thread.currentThread().interrupt();
