@@ -3,7 +3,7 @@ package Settings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -33,16 +33,10 @@ public class ClientAppSettings {
     }
 
     private void loadProperties() {
-        try (InputStream propertiesStream = getResourceAsStream(PROPERTIES_RESOURCE)) {
-            if (propertiesStream != null) {
+        try (InputStream propertiesStream = new FileInputStream(PROPERTIES_RESOURCE)) {
+            this.applicationProperties.load(propertiesStream);
+            LOGGER.warn("properties loaded ...");
 
-                this.applicationProperties.load(propertiesStream);
-
-            } else {
-                throw new FileNotFoundException(
-
-                        "Property file '" + PROPERTIES_RESOURCE + "' not found!!!");
-            }
         } catch (final IOException exio) {
             setDefaultProperties();
 
