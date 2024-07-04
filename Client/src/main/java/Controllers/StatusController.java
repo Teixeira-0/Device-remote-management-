@@ -22,7 +22,7 @@ public class StatusController {
 
 
     @GetMapping("/cpu")
-    public ResponseEntity<Map<String, Object>> downloadData (@RequestParam("sessionid") int id) {
+    public ResponseEntity<Map<String, Object>> statusGathering(@RequestParam("sessionid") int id) {
 
         ClientSession session = ClientConnectionHandler.searchSessionById(id);
 

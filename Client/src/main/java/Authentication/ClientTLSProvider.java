@@ -6,9 +6,7 @@ import org.springframework.stereotype.Component;
 import javax.net.ssl.*;
 import java.io.FileInputStream;
 import java.security.KeyStore;
-import java.util.logging.Level;
-import java.util.logging.LogRecord;
-import java.util.logging.Logger;
+
 
 @Component
 public class ClientTLSProvider {

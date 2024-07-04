@@ -108,6 +108,10 @@ public class ReadapMessageClient {
         return chunkLength;
     }
 
+    public void setChunk(byte[] chunk) {
+        this.chunk = chunk;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

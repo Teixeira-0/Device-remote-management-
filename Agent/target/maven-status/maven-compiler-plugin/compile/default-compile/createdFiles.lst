@@ -1,2 +1,9 @@
+Connection/ConnectionProvider.class
+Settings/Application.class
+Settings/AppSettings.class
+Initializer/Agent.class
+Connection/ConnectionHandler.class
+Session/Session.class
 Protocol/ReadapMessage.class
+Authentication/TLSProvider.class
 Protocol/ReadapCodes.class

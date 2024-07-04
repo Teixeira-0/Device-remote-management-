@@ -1,4 +1,5 @@
 Connection/ClientConnectionHandler.class
+Controllers/StatusController.class
 Settings/ClientAppSettings.class
 Protocol/ReadapCodesClient.class
 Controllers/ConnectionController.class

@@ -3,7 +3,7 @@ package Settings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import java.io.FileNotFoundException;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -14,7 +14,6 @@ public class ClientAppSettings {
 
     private static final String PROPERTIES_RESOURCE = "application.properties";
     private static final String CONNECTION_PORT = "ConnectionPort";
-    private static final String SESSION_POOL_SIZE = "SessionPoolSize";
     private static final String KEYSTORE_PATH = "KeystorePath";
     private static final String KEYSTORE_TYPE = "KeystoreType";
     private static final String MANAGERS_ALGORITHM = "ManagersAlgorithm";
@@ -22,7 +21,6 @@ public class ClientAppSettings {
     private static final String TRUSTSTORE_TYPE = "TruststoreType";
     private static final String CONTEXT_PROTOCOL = "ContextProtocol";
     private static final String PAYLOAD_MAXIMUM_SIZE = "PayloadMaximumSize";
-
     private static final String DOWNLOAD_FOLDER = "DownloadFolder";
     private final Properties applicationProperties = new Properties();
 
@@ -30,17 +28,15 @@ public class ClientAppSettings {
         loadProperties();
     }
 
+    protected InputStream getResourceAsStream(String resourceName) {
+        return this.getClass().getClassLoader().getResourceAsStream(resourceName);
+    }
+
     private void loadProperties() {
-        try (InputStream propertiesStream = this.getClass().getClassLoader().getResourceAsStream(PROPERTIES_RESOURCE)) {
-            if (propertiesStream != null) {
+        try (InputStream propertiesStream = new FileInputStream(PROPERTIES_RESOURCE)) {
+            this.applicationProperties.load(propertiesStream);
+            LOGGER.warn("properties loaded ...");
 
-                this.applicationProperties.load(propertiesStream);
-
-            } else {
-                throw new FileNotFoundException(
-
-                        "Property file '" + PROPERTIES_RESOURCE + "' not found!!!");
-            }
         } catch (final IOException exio) {
             setDefaultProperties();
 
@@ -52,9 +48,6 @@ public class ClientAppSettings {
 
         //Default Connection Port
         this.applicationProperties.setProperty(CONNECTION_PORT,"61010");
-
-        //Default Session Pool Size
-        this.applicationProperties.setProperty(SESSION_POOL_SIZE,"15");
 
         //Default Keystore Type
         this.applicationProperties.setProperty(KEYSTORE_TYPE,"JKS");
@@ -75,10 +68,6 @@ public class ClientAppSettings {
 
     public Integer getConnectionPort(){
         return Integer.valueOf(this.applicationProperties.getProperty(CONNECTION_PORT));
-    }
-
-    public Integer getSessionPoolSize(){
-        return Integer.valueOf(this.applicationProperties.getProperty(SESSION_POOL_SIZE));
     }
 
     public String getKeystorePath(){

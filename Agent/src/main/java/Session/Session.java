@@ -209,7 +209,14 @@ public class Session implements Runnable {
         out.write(response.toByteArrayRemainder());
 
         //Initialize local variables
-        String cmd = "/bin/sh";
+
+        String cmd;
+        if (Objects.equals(Application.settings().getOS(), "win")) {
+            cmd = "powershell.exe" ;
+        } else {
+            cmd = "/bin/sh";
+        }
+
         Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start();
 
 
@@ -247,12 +254,17 @@ public class Session implements Runnable {
     public void remoteShell(InputStream in, OutputStream out) throws IOException {
 
         //Send ACk response
-        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTEACK,  new byte[0]);
+        ReadapMessage response = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTEACK, new byte[0]);
         out.write(response.toByteArrayRemainder());
 
 
         //Initialize local variables
-        String cmd = "/bin/sh";
+        String cmd;
+        if (Objects.equals(Application.settings().getOS(), "win")) {
+            cmd = "powershell.exe" ;
+        } else {
+            cmd = "/bin/sh";
+        }
         Process p = new ProcessBuilder(cmd).redirectErrorStream(true).start();
 
         OutputStream stdin = p.getOutputStream();
