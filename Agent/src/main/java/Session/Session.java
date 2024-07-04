@@ -284,7 +284,7 @@ public class Session implements Runnable {
             String input;
 
             //Transform message chunk into the desired command
-            if ((input = new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8)).equals(" ;echo ;echo 123098123214123")){
+            if ((input = new String(receivedMessage.getChunk(), 0, receivedMessage.getChunkLength(), StandardCharsets.UTF_8)).equals(" ;echo \"\";echo 123098123214123")){
                 ReadapMessage outputMessage = new ReadapMessage(ReadapCodes.VERSION, ReadapCodes.REMOTECOMMANDEND,"".getBytes());
                 out.write(outputMessage.toByteArrayRemainder());
                 break;

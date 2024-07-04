@@ -235,7 +235,7 @@ public class ClientSession {
 
 
             //Send command
-            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND,(command +" ;echo ;echo 123098123214123").getBytes());
+            message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND,(command +" ;echo \"\";echo 123098123214123").getBytes());
             out.write(message.toByteArrayRemainder());
 
 
@@ -304,7 +304,7 @@ public class ClientSession {
 
 
                 //Send command
-                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND, (command + " ;echo ;echo 123098123214123").getBytes());
+                message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.REMOTECOMMAND, (command + " ;echo \"\";echo 123098123214123").getBytes());
                 out.write(message.toByteArrayRemainder());
 
 
@@ -326,7 +326,7 @@ public class ClientSession {
                     message = new ReadapMessageClient(ReadapCodesClient.VERSION, ReadapCodesClient.ACK, new byte[0]);
                     out.write(message.toByteArrayRemainder());
 
-                } while (response.getCode() == ReadapCodesClient.REMOTECOMMANDEND);
+                } while (response.getCode() == ReadapCodesClient.REMOTECOMMANDMESSAGE);
 
             }
             //Request to exit remote execution
