@@ -209,19 +209,24 @@ public class Session implements Runnable {
         out.write(response.toByteArrayRemainder());
 
         //Initialize local variables
-
+        boolean skip = false;
         String command;
 
         String cmd;
         if (Objects.equals(Application.settings().getOS(), "win")) {
             cmd = "powershell.exe" ;
-            command = """
-                    $cpuInfo = Get-CimInstance -ClassName Win32_Processor$cpuInfo | ForEach-Object {
-                        Write-Output "Name: $($_.Name)"
-                        Write-Output "Load Percentage: $($_.LoadPercentage)%"
-                        Write-Output "Number of Cores: $($_.NumberOfCores)"
-                        Write-Output "Number of Logical Processors: $($_.NumberOfLogicalProcessors)"
-                    }"  ;echo \"\";echo 123098123214123""";
+            command = "# Fetch CPU information and usage details using Get-CimInstance\n" +
+                    "$cpuInfo = Get-CimInstance -ClassName Win32_Processor\n" +
+                    "\n" +
+                    "# Print detailed CPU information\n" +
+                    "$cpuInfo | ForEach-Object {\n" +
+                    "    Write-Output \"Name: $($_.Name)\"\n" +
+                    "    Write-Output \"Load Percentage: $($_.LoadPercentage)%\"\n" +
+                    "    Write-Output \"Number of Cores: $($_.NumberOfCores)\"\n" +
+                    "    Write-Output \"Number of Logical Processors: $($_.NumberOfLogicalProcessors)\"\n" +
+                    "}; echo \"\";echo 123098123214123\n";
+
+            skip = true;
         } else {
             cmd = "/bin/sh";
             command = "top -l 1 | grep \"CPU usage\"" + " ;echo \"\";echo 123098123214123";
@@ -247,6 +252,11 @@ public class Session implements Runnable {
         String line;
 
 
+        if(skip){
+            for (int i = 0; i < 16; i++) {
+                line = reader.readLine();
+            }
+        }
         while(!Objects.equals(line = reader.readLine(), "123098123214123")){
             if(line != null) {
                 s.append(line).append('\0');
