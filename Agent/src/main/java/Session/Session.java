@@ -279,6 +279,7 @@ public class Session implements Runnable {
 
         //variable to ignore invalid output of windows
         boolean skip = false;
+        boolean firstIteration= true;
 
         //Initialize local variables
         String cmd;
@@ -323,8 +324,13 @@ public class Session implements Runnable {
             StringBuilder s = new StringBuilder();
             String line;
             try{
-                if(skip){
+                if(skip && firstIteration){
                     for (int i = 0; i < 7; i++) {
+                        reader.readLine();
+                    }
+                    firstIteration = false;
+                }else if(skip){
+                    for (int i = 0; i < 3; i++) {
                         reader.readLine();
                     }
                 }

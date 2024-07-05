@@ -7,15 +7,7 @@
     <list default="true" id="4610e2df-a25f-4b16-81e1-6f0e923877fc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/src/main/java/Session/Session.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Authentication/TLSProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Authentication/TLSProvider.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionProvider.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Connection/ConnectionProvider.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" beforeDir="false" afterPath="$PROJECT_DIR$/Agent/target/classes/Session/Session.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Connection/ClientConnectionHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Controllers/ConnectionController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" beforeDir="false" afterPath="$PROJECT_DIR$/Client/target/classes/Session/ClientSession.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/agent.properties" beforeDir="false" afterPath="$PROJECT_DIR$/agent.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client.properties" beforeDir="false" afterPath="$PROJECT_DIR$/client.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,24 +262,19 @@
           <option name="timeStamp" value="111" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
-          <line>108</line>
-          <option name="timeStamp" value="113" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
           <line>50</line>
           <option name="timeStamp" value="114" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Client/src/main/java/Session/ClientSession.java</url>
-          <line>187</line>
-          <option name="timeStamp" value="115" />
+          <line>317</line>
+          <option name="timeStamp" value="119" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/Agent/src/main/java/Session/Session.java</url>
-          <line>207</line>
-          <option name="timeStamp" value="117" />
+          <line>276</line>
+          <option name="timeStamp" value="120" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
